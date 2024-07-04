@@ -1,0 +1,133 @@
+[{
+  "_id": {
+    "$oid": "66752502b404ea985190defe"
+  },
+  "title": "The Way of Kings",
+  "author": "Brandon Sanderson",
+  "rating": 9,
+  "pages": 400,
+  "genres": [
+    "fantasy"
+  ],
+  "reviews": [
+    {
+      "name": "Yoshi",
+      "body": "Great book!!"
+    },
+    {
+      "name": "Mario",
+      "body": "so so"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66752569b404ea985190deff"
+  },
+  "title": "The Way",
+  "author": "abcdf",
+  "rating": 5,
+  "pages": 300,
+  "genres": [
+    "fantasy"
+  ],
+  "reviews": [
+    {
+      "name": "Yoshi",
+      "body": "Great book!!"
+    },
+    {
+      "name": "mario",
+      "body": "so so"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "667533a6b404ea985190df00"
+  },
+  "title": "Mistborn",
+  "author": "Brandon Sanderson",
+  "rating": 8,
+  "pages": 541,
+  "genres": [
+    "fantasy"
+  ],
+  "reviews": [
+    {
+      "name": "Anna",
+      "body": "A fantastic start to a series!"
+    },
+    {
+      "name": "John",
+      "body": "Interesting magic system."
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "667533a6b404ea985190df01"
+  },
+  "title": "The Name of the Wind",
+  "author": "Patrick Rothfuss",
+  "rating": 9,
+  "pages": 662,
+  "genres": [
+    "fantasy"
+  ],
+  "reviews": [
+    {
+      "name": "Sam",
+      "body": "Beautifully written."
+    },
+    {
+      "name": "Emily",
+      "body": "A bit slow, but worth it."
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "667533a6b404ea985190df02"
+  },
+  "title": "Dune",
+  "author": "Frank Herbert",
+  "rating": 9,
+  "pages": 412,
+  "genres": [
+    "sci-fi"
+  ],
+  "reviews": [
+    {
+      "name": "Paul",
+      "body": "Epic and timeless."
+    },
+    {
+      "name": "Rebecca",
+      "body": "Complex but rewarding."
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "667533a6b404ea985190df03"
+  },
+  "title": "1984",
+  "author": "George Orwell",
+  "rating": 10,
+  "pages": 328,
+  "genres": [
+    "dystopian",
+    "sci-fi"
+  ],
+  "reviews": [
+    {
+      "name": "Alex",
+      "body": "A chilling vision of the future."
+    },
+    {
+      "name": "Michael",
+      "body": "Still relevant today."
+    }
+  ]
+}]
