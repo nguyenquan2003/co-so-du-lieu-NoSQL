@@ -18,7 +18,7 @@ connectToDb((err) => {
 })
 
 
-// routes
+//Lấy danh sách sách
 app.get('/books', (req, res) => { //chỉ ra rằng khi có một yêu cầu GET được gửi đến /books, hàm callback được cung cấp sẽ được thực thi. Hàm callback nhận hai tham số: req (đối tượng yêu cầu) và res (đối tượng phản hồi).
           let books = []
           const page = req.query.p || 0
@@ -39,6 +39,7 @@ app.get('/books', (req, res) => { //chỉ ra rằng khi có một yêu cầu GET
 
 })
 
+//Lấy chi tiết một cuốn sách
 app.get('/books/:id', (req, res) => {
           if (ObjectId.isValid(req.params.id)) {
                     db.collection('books')
@@ -55,7 +56,7 @@ app.get('/books/:id', (req, res) => {
 
           }
 })
-
+//Thêm một cuốn sách mới
 app.post('/books', (req, res) => {
           const book = req.body
 
@@ -68,7 +69,7 @@ app.post('/books', (req, res) => {
                               res.status(500).json({ err: 'could not create a new document' })
                     })
 })
-
+//Xóa một cuốn sách
 app.delete('/books/:id', (req, res) => {
           if (ObjectId.isValid(req.params.id)) {
                     db.collection('books')
@@ -84,6 +85,7 @@ app.delete('/books/:id', (req, res) => {
           }
 });
 
+//Cập nhật một cuốn sách
 app.patch('/books/:id', (req, res) => {
           const updates = req.body;
 
