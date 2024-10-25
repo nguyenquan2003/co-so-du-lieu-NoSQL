@@ -1,0 +1,132 @@
+[{
+  "_id": {
+    "$oid": "6528d4f613177141cf0aa735"
+  },
+  "MaSP": "SP8NI",
+  "TenSP": "Bình thủy điện 5 lít Nagakawa NAG0405",
+  "Gia": 290000,
+  "Soluong": 16,
+  "HinhAnh": "BinhThuy01.jpg",
+  "Giamgia": 10,
+  "MaKM": "GJKT9"
+},
+{
+  "_id": {
+    "$oid": "6527a9df1a90fac5f6cd3080"
+  },
+  "MaSP": "SP001",
+  "TenSP": "Máy Giặt SAMSUNG",
+  "Gia": 3400000,
+  "Soluong": 5,
+  "HinhAnh": "Quatsuong01.jpg",
+  "Giamgia": 0,
+  "MaKM": "KM001"
+},
+{
+  "_id": {
+    "$oid": "652bae85f527d11c24f4aa85"
+  },
+  "MaSP": "SPAVK",
+  "TenSP": "Máy Giặt Xiaomi",
+  "Gia": 4200000,
+  "Soluong": 14,
+  "HinhAnh": "001.jpg",
+  "Giamgia": 10,
+  "MaKM": "GJKT9"
+},
+{
+  "_id": {
+    "$oid": "652baea6f527d11c24f4aa86"
+  },
+  "MaSP": "SPBP6",
+  "TenSP": "Máy Giặt Oppo",
+  "Gia": 2500000,
+  "Soluong": 8,
+  "HinhAnh": "003.jpg",
+  "Giamgia": 0,
+  "MaKM": "KM001"
+},
+{
+  "_id": {
+    "$oid": "652baec4f527d11c24f4aa87"
+  },
+  "MaSP": "SP68P",
+  "TenSP": "Máy Giặt Huawei",
+  "Gia": 5600000,
+  "Soluong": 11,
+  "HinhAnh": "004.jpg",
+  "Giamgia": 10,
+  "MaKM": "GJKT9"
+},
+{
+  "_id": {
+    "$oid": "652baf30f527d11c24f4aa89"
+  },
+  "MaSP": "SPF4S",
+  "TenSP": "Tủ lạnh Xiaomi",
+  "Gia": 6220000,
+  "Soluong": 10,
+  "HinhAnh": "010.jpg",
+  "Giamgia": 10,
+  "MaKM": "KM002"
+},
+{
+  "_id": {
+    "$oid": "652baf5ff527d11c24f4aa8a"
+  },
+  "MaSP": "SP6AK",
+  "TenSP": "Tủ lạnh Huawei",
+  "Gia": 4990000,
+  "Soluong": 8,
+  "HinhAnh": "008.jpg",
+  "Giamgia": 10,
+  "MaKM": "KM002"
+},
+{
+  "_id": {
+    "$oid": "652baf7ff527d11c24f4aa8b"
+  },
+  "MaSP": "SPJWX",
+  "TenSP": "Máy lọc nước Kangaroo",
+  "Gia": 2990000,
+  "Soluong": 20,
+  "HinhAnh": "007.jpg",
+  "Giamgia": 0,
+  "MaKM": "KM001"
+},
+{
+  "_id": {
+    "$oid": "652bafa3f527d11c24f4aa8c"
+  },
+  "MaSP": "SPVLC",
+  "TenSP": "Tủ lạnh Himachi",
+  "Gia": 7990000,
+  "Soluong": 16,
+  "HinhAnh": "009.jpg",
+  "Giamgia": 10,
+  "MaKM": "GJKT9"
+},
+{
+  "_id": {
+    "$oid": "6700fec5c05863da0ca7cf74"
+  },
+  "MaSP": "SP6QL",
+  "TenSP": "Máy Giặt SAMSUNG",
+  "Gia": 3400000,
+  "Soluong": 5,
+  "HinhAnh": "Designer.jpg",
+  "Giamgia": 0,
+  "MaKM": "KM001"
+},
+{
+  "_id": {
+    "$oid": "670f32c84d55f265d4e248f0"
+  },
+  "MaSP": "SPLE5",
+  "TenSP": "Tủ lạnh SAMSUNG",
+  "Gia": 1000000,
+  "Soluong": 2,
+  "HinhAnh": "Designer.jpg",
+  "Giamgia": 15,
+  "MaKM": "NVCNH"
+}]

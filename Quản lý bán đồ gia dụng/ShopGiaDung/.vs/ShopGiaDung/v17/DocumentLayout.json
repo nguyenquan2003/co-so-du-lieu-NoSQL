@@ -1,0 +1,366 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|d:\\sinhvienhuit\\hocki7\\cosodulieu_nosql\\shopgiadung\\model\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:model\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|d:\\sinhvienhuit\\hocki7\\cosodulieu_nosql\\shopgiadung\\control\\hoadonctrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:control\\hoadonctrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\view\\frm_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:view\\frm_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|d:\\sinhvienhuit\\hocki7\\cosodulieu_nosql\\shopgiadung\\view\\frm_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:view\\frm_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\control\\nhanvienctrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:control\\nhanvienctrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\control\\khyenmaictrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:control\\khyenmaictrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\view\\frm_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:view\\frm_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|d:\\sinhvienhuit\\hocki7\\cosodulieu_nosql\\shopgiadung\\view\\frm_khuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:view\\frm_khuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\view\\frm_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:view\\frm_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|d:\\sinhvienhuit\\hocki7\\cosodulieu_nosql\\shopgiadung\\view\\frm_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:view\\frm_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|d:\\sinhvienhuit\\hocki7\\cosodulieu_nosql\\shopgiadung\\view\\frm_khuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:view\\frm_khuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\view\\frm_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:view\\frm_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\view\\frm_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:view\\frm_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\control\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:control\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\view\\frm_quanly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:view\\frm_quanly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\view\\frm_quanly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:view\\frm_quanly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\view\\frm_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:view\\frm_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\control\\quatangctrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:control\\quatangctrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\control\\khachhangctr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:control\\khachhangctr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\model\\quatang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB499EC8-407E-4517-B34B-1A81004F84C9}|ShopGiaDung.csproj|solutionrelative:model\\quatang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HoaDon.cs",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\MODEL\\HoaDon.cs",
+              "RelativeDocumentMoniker": "MODEL\\HoaDon.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\MODEL\\HoaDon.cs",
+              "RelativeToolTip": "MODEL\\HoaDon.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T16:45:02.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Frm_NhanVien.cs [Design]",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_NhanVien.cs",
+              "RelativeDocumentMoniker": "VIEW\\Frm_NhanVien.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_NhanVien.cs [Design]*",
+              "RelativeToolTip": "VIEW\\Frm_NhanVien.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T16:38:49.17Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NhanVienCtrl.cs",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\CONTROL\\NhanVienCtrl.cs",
+              "RelativeDocumentMoniker": "CONTROL\\NhanVienCtrl.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\CONTROL\\NhanVienCtrl.cs",
+              "RelativeToolTip": "CONTROL\\NhanVienCtrl.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAvwCsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T13:59:30.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Frm_NhanVien.cs",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_NhanVien.cs",
+              "RelativeDocumentMoniker": "VIEW\\Frm_NhanVien.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_NhanVien.cs*",
+              "RelativeToolTip": "VIEW\\Frm_NhanVien.cs*",
+              "ViewState": "AgIAAOcAAAAAAAAAAAAAAPkAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T08:37:20.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HoadonCtrl.cs",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\CONTROL\\HoadonCtrl.cs",
+              "RelativeDocumentMoniker": "CONTROL\\HoadonCtrl.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\CONTROL\\HoadonCtrl.cs",
+              "RelativeToolTip": "CONTROL\\HoadonCtrl.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T14:29:39.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "KhyenMaiCtrl.cs",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\CONTROL\\KhyenMaiCtrl.cs",
+              "RelativeDocumentMoniker": "CONTROL\\KhyenMaiCtrl.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\CONTROL\\KhyenMaiCtrl.cs",
+              "RelativeToolTip": "CONTROL\\KhyenMaiCtrl.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAD4v1oAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T07:26:13.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T06:55:19.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Frm_Hoadon.cs [Design]",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_Hoadon.cs",
+              "RelativeDocumentMoniker": "VIEW\\Frm_Hoadon.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_Hoadon.cs [Design]",
+              "RelativeToolTip": "VIEW\\Frm_Hoadon.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T06:56:19.021Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Frm_KhuyenMai.cs",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_KhuyenMai.cs",
+              "RelativeDocumentMoniker": "VIEW\\Frm_KhuyenMai.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_KhuyenMai.cs",
+              "RelativeToolTip": "VIEW\\Frm_KhuyenMai.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAIAywIgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T14:54:16.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Frm_Hoadon.cs",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_Hoadon.cs",
+              "RelativeDocumentMoniker": "VIEW\\Frm_Hoadon.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_Hoadon.cs",
+              "RelativeToolTip": "VIEW\\Frm_Hoadon.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAIAwwB8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T06:52:31.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Frm_SanPham.cs",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_SanPham.cs",
+              "RelativeDocumentMoniker": "VIEW\\Frm_SanPham.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_SanPham.cs",
+              "RelativeToolTip": "VIEW\\Frm_SanPham.cs",
+              "ViewState": "AgIAAMQAAAAAAAAAAAAMwNUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T14:11:55.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Frm_KhuyenMai.cs [Design]",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_KhuyenMai.cs",
+              "RelativeDocumentMoniker": "VIEW\\Frm_KhuyenMai.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_KhuyenMai.cs [Design]",
+              "RelativeToolTip": "VIEW\\Frm_KhuyenMai.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T15:39:25.911Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Frm_SanPham.cs [Design]",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_SanPham.cs",
+              "RelativeDocumentMoniker": "VIEW\\Frm_SanPham.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_SanPham.cs [Design]",
+              "RelativeToolTip": "VIEW\\Frm_SanPham.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T14:11:53.739Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Frm_DangNhap.cs",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_DangNhap.cs",
+              "RelativeDocumentMoniker": "VIEW\\Frm_DangNhap.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_DangNhap.cs",
+              "RelativeToolTip": "VIEW\\Frm_DangNhap.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAYwHcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T13:57:04.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DangNhap.cs",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\CONTROL\\DangNhap.cs",
+              "RelativeDocumentMoniker": "CONTROL\\DangNhap.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\CONTROL\\DangNhap.cs",
+              "RelativeToolTip": "CONTROL\\DangNhap.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAswC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T13:59:21.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Frm_QuanLy.cs",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_QuanLy.cs",
+              "RelativeDocumentMoniker": "VIEW\\Frm_QuanLy.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_QuanLy.cs",
+              "RelativeToolTip": "VIEW\\Frm_QuanLy.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAowE0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T08:37:25.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Frm_QuanLy.cs [Design]",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_QuanLy.cs",
+              "RelativeDocumentMoniker": "VIEW\\Frm_QuanLy.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_QuanLy.cs [Design]",
+              "RelativeToolTip": "VIEW\\Frm_QuanLy.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T14:05:39.12Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Frm_DangNhap.cs [Design]",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_DangNhap.cs",
+              "RelativeDocumentMoniker": "VIEW\\Frm_DangNhap.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\VIEW\\Frm_DangNhap.cs [Design]",
+              "RelativeToolTip": "VIEW\\Frm_DangNhap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T13:57:02.135Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "QuaTang.cs",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\MODEL\\QuaTang.cs",
+              "RelativeDocumentMoniker": "MODEL\\QuaTang.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\MODEL\\QuaTang.cs",
+              "RelativeToolTip": "MODEL\\QuaTang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T11:51:23.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "QuaTangCtrl.cs",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\CONTROL\\QuaTangCtrl.cs",
+              "RelativeDocumentMoniker": "CONTROL\\QuaTangCtrl.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\CONTROL\\QuaTangCtrl.cs",
+              "RelativeToolTip": "CONTROL\\QuaTangCtrl.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAiwCAAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T11:53:54.147Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "KhachhangCTR.cs",
+              "DocumentMoniker": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\CONTROL\\KhachhangCTR.cs",
+              "RelativeDocumentMoniker": "CONTROL\\KhachhangCTR.cs",
+              "ToolTip": "D:\\SinhVienHUIT\\HocKi7\\CoSoDuLieu_NoSQL\\ShopGiaDung\\CONTROL\\KhachhangCTR.cs",
+              "RelativeToolTip": "CONTROL\\KhachhangCTR.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T12:00:54.97Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

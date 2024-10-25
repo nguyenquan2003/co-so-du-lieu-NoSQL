@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "6523fb93e6f03522786c0046"
+  },
+  "MaQT": "QT001",
+  "TenQT": "Gói kẹo bạc hà cao cấp As125",
+  "MoTaQT": "Gói kẹo hương bạc hà 100 viên nặng 500g giới hạn",
+  "HinhAnhQT": null,
+  "SoLuongQT": 4
+},
+{
+  "_id": {
+    "$oid": "652401bee6f03522786c0058"
+  },
+  "MaQT": "QT002",
+  "TenQT": "Gấu Bông 0.5",
+  "MoTaQT": "",
+  "HinhAnhQT": null,
+  "SoLuongQT": 6
+},
+{
+  "_id": {
+    "$oid": "652bb217066e0100b5a1aa7c"
+  },
+  "MaQT": "QT002",
+  "TenQT": "Phiếu mua hàng 200k đồng",
+  "MoTaQT": "Phiếu mua hàng trị giá 200k đồng áp dụng cho tất cả đồ gia dụng",
+  "HinhAnhQT": null,
+  "SoLuongQT": 10
+},
+{
+  "_id": {
+    "$oid": "652bb236066e0100b5a1aa7d"
+  },
+  "MaQT": "QT003",
+  "TenQT": "Phiếu mua hàng 100k đồng",
+  "MoTaQT": "Phiếu mua hàng trị giá 100k đồng áp dụng cho tất cả đồ gia dụng",
+  "HinhAnhQT": null,
+  "SoLuongQT": 20
+},
+{
+  "_id": {
+    "$oid": "652bb249066e0100b5a1aa7e"
+  },
+  "MaQT": "QT004",
+  "TenQT": "Phiếu mua hàng 500k đồng",
+  "MoTaQT": "Phiếu mua hàng trị giá 500k đồng áp dụng cho tất cả đồ gia dụng",
+  "HinhAnhQT": null,
+  "SoLuongQT": 5
+},
+{
+  "_id": {
+    "$oid": "652bb28c066e0100b5a1aa7f"
+  },
+  "MaQT": "QT005",
+  "TenQT": "Xiaomi Miband 4",
+  "MoTaQT": "Đồng hồ đeo tay thông minh thế hệ 4 đến từ Xiaomi",
+  "HinhAnhQT": null,
+  "SoLuongQT": 2
+},
+{
+  "_id": {
+    "$oid": "652bb374066e0100b5a1aa80"
+  },
+  "MaQT": "QT006",
+  "TenQT": "Hộp quà bí ẩn loại 1",
+  "MoTaQT": "Hộp quà cực kì bí ẩn",
+  "HinhAnhQT": null,
+  "SoLuongQT": 10
+},
+{
+  "_id": {
+    "$oid": "652bb37e066e0100b5a1aa81"
+  },
+  "MaQT": "QT007",
+  "TenQT": "Hộp quà bí ẩn loại 2",
+  "MoTaQT": "Hộp quà cực kì bí ẩn",
+  "HinhAnhQT": null,
+  "SoLuongQT": 5
+},
+{
+  "_id": {
+    "$oid": "652bb387066e0100b5a1aa82"
+  },
+  "MaQT": "QT008",
+  "TenQT": "Hộp quà bí ẩn loại 3",
+  "MoTaQT": "Hộp quà cực kì bí ẩn",
+  "HinhAnhQT": null,
+  "SoLuongQT": 1
+}]

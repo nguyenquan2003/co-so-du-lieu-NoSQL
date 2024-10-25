@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "652bac9ff527d11c24f4aa7f"
+  },
+  "MaNV": "NV005",
+  "TenNV": "Lê Trọng E",
+  "GioiTinh": "Nam",
+  "NgaySinh": {
+    "$date": "2001-04-03T09:10:19.000Z"
+  },
+  "QueQuan": "Hà Nội",
+  "SoDienThoai": "0987678902",
+  "ChucVu": "Admin",
+  "TaiKhoan": "admin3",
+  "MatKhau": "admin123"
+},
+{
+  "_id": {
+    "$oid": "670f2b6d652d9d00bb780110"
+  },
+  "MaNV": "NVNI5",
+  "TenNV": "Lâm Tấn",
+  "GioiTinh": "Nam",
+  "NgaySinh": {
+    "$date": "2004-09-01T02:56:09.000Z"
+  },
+  "QueQuan": "Bạc Liêu",
+  "SoDienThoai": "0856278971",
+  "ChucVu": "Admin",
+  "TaiKhoan": "LamDat",
+  "MatKhau": "lamdat123"
+},
+{
+  "_id": {
+    "$oid": "670f2c3b213852411a6bd60b"
+  },
+  "MaNV": "NVZ2A",
+  "TenNV": "Hoang huy",
+  "GioiTinh": "Nam",
+  "NgaySinh": {
+    "$date": "2018-06-01T02:59:35.000Z"
+  },
+  "QueQuan": "sai gon",
+  "SoDienThoai": "0967872912",
+  "ChucVu": "Seller",
+  "TaiKhoan": "HuyHoang",
+  "MatKhau": "huy123"
+}]

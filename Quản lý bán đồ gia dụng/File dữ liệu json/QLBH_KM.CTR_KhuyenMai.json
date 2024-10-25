@@ -1,0 +1,219 @@
+[{
+  "_id": {
+    "$oid": "6520ec23850c379eddaaac33"
+  },
+  "MaCT": "CT002",
+  "TenCTR": "Khuyến mãi tặng quà đầu mùa selt",
+  "TrangThai": true,
+  "NgayBatDau": {
+    "$date": "2023-09-23T14:21:51.610Z"
+  },
+  "NgayKetThuc": {
+    "$date": "2023-10-13T14:21:51.000Z"
+  },
+  "KhuyenMai": {
+    "MaKM": "KM002",
+    "TenKM": "Tặng quà cho đơn hàng trên 500k",
+    "MoTaKM": "Tổng đơn hàng giá trị trên 5 trăm nghìn sẽ được tặng quà",
+    "Mucgiam": 10
+  },
+  "QuaTang": {
+    "MaQT": "QT002",
+    "TenQT": "Nồi áp xuất 2 tầng BKS",
+    "MoTaQT": "Nối áp xuất giá 150.000 Đ",
+    "HinhAnhQT": null,
+    "MucNhan": 650000,
+    "SoLuongQT": 1
+  }
+},
+{
+  "_id": {
+    "$oid": "65240c913c77e4cbf0416a79"
+  },
+  "MaCT": "GJKT",
+  "TenCTR": "Khuyến mãi giảm giá tháng 10 hàng điện tử trên 150k",
+  "TrangThai": true,
+  "NgayBatDau": {
+    "$date": "2023-10-09T14:21:51.610Z"
+  },
+  "NgayKetThuc": {
+    "$date": "2023-10-19T14:21:51.000Z"
+  },
+  "KhuyenMai": {
+    "MaKM": "GJKT9",
+    "TenKM": "Giảm giá SP điện tử tháng 10",
+    "MoTaKM": "Giảm 10 % giá trị",
+    "Mucgiam": 10
+  },
+  "QuaTang": {
+    "MaQT": "QT002",
+    "TenQT": "Gấu Bông 0.5",
+    "MoTaQT": "",
+    "HinhAnhQT": "",
+    "MucNhan": 700000,
+    "SoLuongQT": 1
+  }
+},
+{
+  "_id": {
+    "$oid": "6520eabc850c379eddaaac32"
+  },
+  "MaCT": "CT001",
+  "TenCTR": "Khuyến  mãi tết ",
+  "TrangThai": true,
+  "NgayBatDau": {
+    "$date": "2018-09-15T21:42:13.815Z"
+  },
+  "NgayKetThuc": {
+    "$date": "2020-10-15T21:42:13.815Z"
+  },
+  "KhuyenMai": {
+    "MaKM": "KM001",
+    "TenKM": "Giảm giá đơn hàng trên 200.000 VND",
+    "MoTaKM": "Tổng đơn hàng giá trị trên 2 trăm nghìn sẽ giảm giá",
+    "MucGiam": 20
+  },
+  "QuaTang": {
+    "MaQT": "QT001",
+    "TenQT": "Gói kẹo bạc hà cao cấp As125",
+    "MoTaQT": "Gói kẹo hương bạc hà 100 viên nặng 500g giới hạn",
+    "HinhAnhQT": null,
+    "MucNhan": 150000,
+    "SoLuongQT": 1
+  }
+},
+{
+  "_id": {
+    "$oid": "652bb4b21862567bbbe676e8"
+  },
+  "MaCT": "DHBY",
+  "TenCTR": "Khuyến mãi sốc mùa noen 24-25/12/2023",
+  "TrangThai": true,
+  "NgayBatDau": {
+    "$date": "2023-12-20T09:44:19.000Z"
+  },
+  "NgayKetThuc": {
+    "$date": "2023-12-25T09:44:19.000Z"
+  },
+  "KhuyenMai": {
+    "TenKM": "Khuyến mãi Noen 12/2023",
+    "MoTaKM": "",
+    "Mucgiam": 30,
+    "MaKM": "DHBYT"
+  },
+  "QuaTang": {
+    "MaQT": "QT002",
+    "TenQT": "Phiếu mua hàng 200k đồng",
+    "MoTaQT": "",
+    "HinhAnhQT": "",
+    "SoLuongQT": 10
+  }
+},
+{
+  "_id": {
+    "$oid": "652bb4f91862567bbbe676e9"
+  },
+  "MaCT": "NVCN",
+  "TenCTR": "Khuyến mãi tháng 11/2023",
+  "TrangThai": true,
+  "NgayBatDau": {
+    "$date": "2023-12-20T09:44:19.000Z"
+  },
+  "NgayKetThuc": {
+    "$date": "2023-12-25T09:44:19.000Z"
+  },
+  "KhuyenMai": {
+    "TenKM": "Khuyến mãi 11/2023",
+    "MoTaKM": "",
+    "Mucgiam": 15,
+    "MaKM": "NVCNH"
+  },
+  "QuaTang": {
+    "MaQT": "QT006",
+    "TenQT": "Hộp quà bí ẩn loại 1",
+    "MoTaQT": "",
+    "HinhAnhQT": "",
+    "SoLuongQT": 5
+  }
+},
+{
+  "_id": {
+    "$oid": "652bb52d1862567bbbe676ea"
+  },
+  "MaCT": "HYC0",
+  "TenCTR": "Khuyến mãi giao thừa 2023-2024",
+  "TrangThai": true,
+  "NgayBatDau": {
+    "$date": "2023-12-28T09:44:19.000Z"
+  },
+  "NgayKetThuc": {
+    "$date": "2023-12-31T09:44:19.000Z"
+  },
+  "KhuyenMai": {
+    "TenKM": "Khuyến mãi giao thừa 2023",
+    "MoTaKM": "",
+    "Mucgiam": 35,
+    "MaKM": "HYC0B"
+  },
+  "QuaTang": {
+    "MaQT": "QT004",
+    "TenQT": "Phiếu mua hàng 500k đồng",
+    "MoTaQT": "",
+    "HinhAnhQT": "",
+    "SoLuongQT": 5
+  }
+},
+{
+  "_id": {
+    "$oid": "652bb5541862567bbbe676eb"
+  },
+  "MaCT": "X70E",
+  "TenCTR": "Khuyến mãi tháng 12",
+  "TrangThai": true,
+  "NgayBatDau": {
+    "$date": "2023-12-01T09:44:19.000Z"
+  },
+  "NgayKetThuc": {
+    "$date": "2023-12-31T09:44:19.000Z"
+  },
+  "KhuyenMai": {
+    "TenKM": "Khuyến mãi tháng 12",
+    "MoTaKM": "",
+    "Mucgiam": 15,
+    "MaKM": "X70E1"
+  },
+  "QuaTang": {
+    "MaQT": "QT007",
+    "TenQT": "Hộp quà bí ẩn loại 2",
+    "MoTaQT": "",
+    "HinhAnhQT": "",
+    "SoLuongQT": 10
+  }
+},
+{
+  "_id": {
+    "$oid": "652bb5a91862567bbbe676ec"
+  },
+  "MaCT": "9WOO",
+  "TenCTR": "Khuyến mãi đầu năm 2024",
+  "TrangThai": true,
+  "NgayBatDau": {
+    "$date": "2024-01-01T09:48:08.000Z"
+  },
+  "NgayKetThuc": {
+    "$date": "2024-01-31T09:48:08.000Z"
+  },
+  "KhuyenMai": {
+    "TenKM": "Khuyến mãi tháng 1/2024",
+    "MoTaKM": "",
+    "Mucgiam": 30,
+    "MaKM": "9WOOB"
+  },
+  "QuaTang": {
+    "MaQT": "QT008",
+    "TenQT": "Hộp quà bí ẩn loại 3",
+    "MoTaQT": "",
+    "HinhAnhQT": "",
+    "SoLuongQT": 3
+  }
+}]
