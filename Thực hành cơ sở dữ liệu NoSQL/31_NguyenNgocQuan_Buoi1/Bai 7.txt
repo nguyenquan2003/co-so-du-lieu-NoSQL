@@ -1,0 +1,82 @@
+Cau 7
+1/ db.hoadon.aggregate([
+   { $group: { _id: "$Khach hang.Ma khach hang", soLuongHoaDon: { $sum: 1 } } }
+])
+2/ db.hoadon.aggregate([
+   { $group: { 
+      _id: { maKhachHang: "$Khach hang.Ma khach hang", tenKhachHang: "$Khach hang.Ten khach hang" },
+      soLuongHoaDon: { $sum: 1 }
+   }}
+])
+3/ db.hoadon.aggregate([
+   { $project: { "Ma hoa don": 1, "Ngay lap": 1, soLuongMatHang: { $size: "$San pham ban" } } }
+])
+4/ db.hoadon.aggregate([
+   { $match: { "Khach hang.Ten khach hang": "Tran Minh Tuan" } },
+   { $group: { _id: "$Ngay lap", soLuongHoaDon: { $sum: 1 } } }
+])
+5/ db.hoadon.aggregate([
+   { $match: { "Khach hang.Dia chi": "TPHCM" } },
+   { $project: { "Khach hang.Ma khach hang": 1, "Khach hang.Ten khach hang": 1 } }
+])
+6/ db.hoadon.aggregate([
+   { $match: { "Ngay lap": { $gte: new Date("2021-03-12"), $lte: new Date("2021-03-20") } } }
+])
+7/ db.hoadon.aggregate([
+   { $match: { "Khach hang.Ten khach hang": "Tran Minh Tuan" } },
+   { $project: { "Ma hoa don": 1, "Ngay lap": 1 } },
+   { $sort: { "Ngay lap": 1 } }
+])
+8/ db.hoadon.aggregate([
+   { $group: { 
+      _id: { maKhachHang: "$Khach hang.Ma khach hang", tenKhachHang: "$Khach hang.Ten khach hang" },
+      soLuongHoaDon: { $sum: 1 }
+   }},
+   { $match: { soLuongHoaDon: { $gt: 2 } } }
+])
+9/ db.hoadon.aggregate([
+   { $unwind: "$San pham ban" },
+   { $group: { 
+      _id: "$San pham ban.Ma sp", 
+      giaBanTrungBinh: { $avg: "$San pham ban.Gia ban" }
+   }}
+])
+10/ db.hoadon.aggregate([
+   { $group: { 
+      _id: { maKhachHang: "$Khach hang.Ma khach hang", tenKhachHang: "$Khach hang.Ten khach hang" },
+      danhSachHoaDon: { $addToSet: "$Ma hoa don" }
+   }}
+])
+11/ db.hoadon.aggregate([
+   { $group: { 
+      _id: "$Ngay lap", 
+      danhSachHoaDon: { $addToSet: "$Ma hoa don" }
+   }}
+])
+12/ db.hoadon.aggregate([
+   { $unwind: "$San pham ban" },
+   { $group: { 
+      _id: { maSp: "$San pham ban.Ma sp", tenSp: "$San pham ban.Ten sp" },
+      tongSoLuongBan: { $sum: "$San pham ban.So luong" }
+   }}
+])
+13/ db.hoadon.aggregate([
+   { $unwind: "$San pham ban" },
+   { $group: { 
+      _id: "$Ma hoa don", 
+      tenKhachHang: { $first: "$Khach hang.Ten khach hang" },
+      triGiaHoaDon: { $sum: { $multiply: ["$San pham ban.So luong", "$San pham ban.Gia ban"] } }
+   }}
+])
+14/ db.hoadon.aggregate([
+   { $project: { maHoaDon: "$Ma hoa don", month: { $month: "$Ngay lap" } } },
+   { $match: { month: 7 } }
+])
+15/ db.hoadon.aggregate([
+   { $project: { maHoaDon: "$Ma hoa don", year: { $year: "$Ngay lap" } } },
+   { $match: { year: 2020 } }
+])
+16/ db.hoadon.aggregate([
+   { $project: { maHoaDon: "$Ma hoa don", year: { $year: "$Ngay lap" }, month: { $month: "$Ngay lap" } } },
+   { $match: { year: 2020, month: 7 } }
+])

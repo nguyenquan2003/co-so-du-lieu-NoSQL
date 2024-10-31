@@ -1,0 +1,163 @@
+[{
+  "_id": {
+    "$oid": "6719e6ade5131aa381e74fb6"
+  },
+  "Masv": "123456",
+  "Hoten": "Nguyen Van A",
+  "Ngaysinh": "2000-01-01",
+  "Phai": "Nam",
+  "Email": [
+    "nguyenvana@example.com",
+    "a.nguyen@example.com"
+  ],
+  "Lop": {
+    "Malop": "L01",
+    "Tenlop": "CNTT"
+  },
+  "Monhoc": [
+    {
+      "Mamh": "MH01",
+      "Tenmh": "Lap Trinh C",
+      "Sotc": 3,
+      "Diem": 8.5
+    },
+    {
+      "Mamh": "MH02",
+      "Tenmh": "Toan Roi Rac",
+      "Sotc": 4,
+      "Diem": 7
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6719e860faedcc67ad6a49ad"
+  },
+  "Masv": "789012",
+  "Hoten": "Le Thi B",
+  "Ngaysinh": {
+    "$date": "1999-05-15T00:00:00.000Z"
+  },
+  "Phai": "Nu",
+  "Email": [
+    "lethib@gmail.com",
+    "b.le@gmail.com"
+  ],
+  "Lop": {
+    "Malop": "L02",
+    "Tenlop": "Kinh te"
+  },
+  "Monhoc": [
+    {
+      "Mamh": "MH03",
+      "Tenmh": "Kinh Te Vi Mo",
+      "Sotc": 3,
+      "Diem": 7.5
+    },
+    {
+      "Mamh": "MH04",
+      "Tenmh": "Thue",
+      "Sotc": 2,
+      "Diem": 8
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6719eb93faedcc67ad6a49b0"
+  },
+  "Masv": "789012",
+  "Hoten": "Le Thi B",
+  "Ngaysinh": {
+    "$date": "1999-05-15T00:00:00.000Z"
+  },
+  "Phai": "Nu",
+  "Email": [
+    "lethib@example.com",
+    "b.le@example.com"
+  ],
+  "Lop": {
+    "Malop": "L02",
+    "Tenlop": "Kinh te"
+  },
+  "Monhoc": [
+    {
+      "Mamh": "MH03",
+      "Tenmh": "Kinh Te Vi Mo",
+      "Sotc": 3,
+      "Diem": 7.5
+    },
+    {
+      "Mamh": "MH04",
+      "Tenmh": "Thue",
+      "Sotc": 2,
+      "Diem": 8
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6719eb99faedcc67ad6a49b1"
+  },
+  "Masv": "345678",
+  "Hoten": "Tran Van C",
+  "Ngaysinh": {
+    "$date": "2001-03-22T00:00:00.000Z"
+  },
+  "Phai": "Nam",
+  "Email": [
+    "tranvanc@example.com",
+    "c.tran@example.com"
+  ],
+  "Lop": {
+    "Malop": "L03",
+    "Tenlop": "Xay Dung"
+  },
+  "Monhoc": [
+    {
+      "Mamh": "MH05",
+      "Tenmh": "Ky Thuat Dien",
+      "Sotc": 4,
+      "Diem": 7.8
+    },
+    {
+      "Mamh": "MH06",
+      "Tenmh": "Ket Cau",
+      "Sotc": 3,
+      "Diem": 8.2
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6719eb99faedcc67ad6a49b2"
+  },
+  "Masv": "901234",
+  "Hoten": "Pham Thi D",
+  "Ngaysinh": {
+    "$date": "2000-12-10T00:00:00.000Z"
+  },
+  "Phai": "Nu",
+  "Email": [
+    "phamthid@example.com",
+    "d.pham@example.com"
+  ],
+  "Lop": {
+    "Malop": "L04",
+    "Tenlop": "Quan Tri Kinh Doanh"
+  },
+  "Monhoc": [
+    {
+      "Mamh": "MH07",
+      "Tenmh": "Marketing",
+      "Sotc": 3,
+      "Diem": 8
+    },
+    {
+      "Mamh": "MH08",
+      "Tenmh": "Quan Tri Tai Chinh",
+      "Sotc": 4,
+      "Diem": 8.5
+    }
+  ]
+}]

@@ -1,0 +1,39 @@
+1/ db.SV.find({ 
+   Phai: "Nu", 
+   "NgoaiNgu": "Tieng Anh" 
+})
+2/ db.SV.find({ 
+   Phai: "Nam", 
+   Tuoi: { $gt: 22 } 
+})
+3/ db.SV.find({ 
+   Hoten: { $regex: /^T/ } 
+})
+4/ db.SV.find({ 
+   Hoten: { $regex: "Lan$" } 
+}, { 
+   Masv: 1, Hoten: 1, Phai: 1 
+})
+5/ db.SV.find({ 
+   NgoaiNgu: { $in: ["Tieng Phap", "Tieng Nhat"] } 
+})
+6/ db.SV.find({ 
+   "Lop.Tenlop": { $in: ["08DHTH", "09DHTH"] } 
+}, { 
+   Masv: 1, Hoten: 1 
+})
+7/ db.SV.find({ 
+   "Lop.Tenlop": "09DHTH", 
+   $or: [ 
+      { Tuoi: { $lt: 23 } }, 
+      { Tuoi: { $gt: 25 } } 
+   ]
+})
+8/ db.SV.find({ 
+   "Lop.Tenlop": "09DHTH", 
+   NgoaiNgu: { $in: ["Tieng Phap", "Tieng Nhat"] } 
+})
+9/ db.SV.find({ 
+   "Monhoc.Tenmh": "Co So Du Lieu", 
+   "Monhoc.Diem": { $gt: 7.5 } 
+})

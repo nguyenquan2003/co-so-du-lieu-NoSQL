@@ -1,0 +1,117 @@
+Cau 8
+1/ db.SV.aggregate([
+    {
+        $project: {
+            Masv: 1,
+            Hoten: 1,
+            Ngaysinh: { $year: "$Ngaysinh" }
+        }
+    }
+])
+
+2/ db.SV.aggregate([
+    {
+        $project: {
+            Masv: 1,
+            Tenlop: "$Lop.Tenlop",
+            Tuoi: { 
+                $subtract: [
+                    { $year: new Date() }, 
+                    { $year: "$Ngaysinh" }
+                ]
+            }
+        }
+    }
+])
+
+3/ db.SV.aggregate([
+    {
+        $unwind: "$Monhoc"
+    },
+    {
+        $group: {
+            _id: {
+                Mamh: "$Monhoc.Mamh",
+                Tenmh: "$Monhoc.Tenmh"
+            },
+            SoSV: { $sum: 1 }
+        }
+    },
+    {
+        $sort: { "_id.Mamh": 1 }
+    },
+    {
+        $project: {
+            Mamh: "$_id.Mamh",
+            Tenmh: "$_id.Tenmh",
+            SoSV: 1
+        }
+    }
+])
+
+4/ db.SV.aggregate([
+    {
+        $group: {
+            _id: {
+                Malop: "$Lop.Malop",
+                Tenlop: "$Lop.Tenlop"
+            },
+            DanhSachSV: { $push: "$Masv" }
+        }
+    },
+    {
+        $project: {
+            Malop: "$_id.Malop",
+            Tenlop: "$_id.Tenlop",
+            DanhSachSV: 1
+        }
+    }
+])
+
+5/ db.SV.aggregate([
+    {
+        $unwind: "$Monhoc"
+    },
+    {
+        $group: {
+            _id: {
+                Mamh: "$Monhoc.Mamh",
+                Tenmh: "$Monhoc.Tenmh"
+            },
+            DanhSachSV: { $push: "$Masv" }
+        }
+    },
+    {
+        $project: {
+            Mamh: "$_id.Mamh",
+            Tenmh: "$_id.Tenmh",
+            DanhSachSV: 1
+        }
+    }
+])
+
+6/ db.SV.aggregate([
+    {
+        $unwind: "$Monhoc"
+    },
+    {
+        $group: {
+            _id: {
+                Mamh: "$Monhoc.Mamh",
+                Tenmh: "$Monhoc.Tenmh"
+            },
+            SoSV: { $sum: 1 }
+        }
+    },
+    {
+        $match: { SoSV: { $gte: 2 } }
+    },
+    {
+        $project: {
+            Mamh: "$_id.Mamh",
+            Tenmh: "$_id.Tenmh",
+            SoSV: 1
+        }
+    }
+])
+

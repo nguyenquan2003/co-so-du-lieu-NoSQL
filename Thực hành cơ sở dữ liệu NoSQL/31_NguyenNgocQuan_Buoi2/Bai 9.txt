@@ -1,0 +1,22 @@
+1/ db.SV.getIndexes()
+2/ db.SV.createIndex({ Masv: 1 })
+3/ db.SV.dropIndex("Masv_1") 
+db.SV.createIndex({ Masv: -1 }, { unique: true })
+4/ db.SV.createIndex({ Masv: -1, Hoten: -1 }, { sparse: true })
+5/ db.SV.dropIndexes() // Xóa tất cả các chỉ mục
+db.SV.createIndex({ Masv: 1 }, { name: "idx_Masv" })
+db.SV.createIndex({ Hoten: 1 }, { name: "idx_Hoten" })
+6/ db.SV.dropIndexes() // Xóa các chỉ mục
+db.SV.find({ Hoten: "Nguyen Van A", "Lop.Tenlop": "CNTT", "Diachi": "123 Đường ABC" })
+    .explain("executionStats")
+
+//Tạo chỉ mục
+db.SV.createIndex({ Hoten: 1 })
+db.SV.find({ Hoten: "Nguyen Van A" }).explain("executionStats")
+
+db.SV.createIndex({ Diachi: 1 })
+db.SV.find({ Diachi: "123 Đường ABC" }).explain("executionStats")
+
+db.SV.createIndex({ "Lop.Tenlop": 1 })
+db.SV.find({ "Lop.Tenlop": "CNTT" }).explain("executionStats")
+

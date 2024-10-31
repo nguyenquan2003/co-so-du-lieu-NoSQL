@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "6719ed7ae5131aa381e74ff2"
+  },
+  "Mã hóa đơn": "HD001",
+  "Ngày lập": "2024-10-24",
+  "Khách hàng": {
+    "Mã khách hàng": "KH001",
+    "Tên khách hàng": "Nguyễn Văn A",
+    "Địa chỉ": "123 Đường ABC, Quận 1, TP.HCM"
+  },
+  "Sản phẩm bán": [
+    {
+      "Mã sp": "SP001",
+      "Tên sp": "Laptop Dell",
+      "Số lượng": 1,
+      "Giá bán": 15000000,
+      "Thành tiền": 15000000
+    },
+    {
+      "Mã sp": "SP002",
+      "Tên sp": "Chuột Logitech",
+      "Số lượng": 2,
+      "Giá bán": 500000,
+      "Thành tiền": 1000000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6719ef173928ac96ef9ee244"
+  },
+  "Ma hoa don": "HD002",
+  "Ngay lap": {
+    "$date": "2023-05-10T00:00:00.000Z"
+  },
+  "Khach hang": {
+    "Ma khach hang": "KH002",
+    "Ten khach hang": "Tran Thi C",
+    "Dia chi": "456 Duong DEF, Quan 2, TP.HCM"
+  },
+  "San pham ban": [
+    {
+      "Ma sp": "SP003",
+      "Ten sp": "Dien thoai Samsung",
+      "So luong": 1,
+      "Gia ban": 10000000,
+      "Thanh tien": 10000000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6719ef173928ac96ef9ee245"
+  },
+  "Ma hoa don": "HD003",
+  "Ngay lap": {
+    "$date": "2022-08-15T00:00:00.000Z"
+  },
+  "Khach hang": {
+    "Ma khach hang": "KH003",
+    "Ten khach hang": "Do Thanh Binh",
+    "Dia chi": "789 Duong GHI, Quan 3, TP.HCM"
+  },
+  "San pham ban": [
+    {
+      "Ma sp": "SP004",
+      "Ten sp": "Tivi Sony",
+      "So luong": 2,
+      "Gia ban": 8000000,
+      "Thanh tien": 16000000
+    },
+    {
+      "Ma sp": "SP005",
+      "Ten sp": "May giat LG",
+      "So luong": 1,
+      "Gia ban": 7000000,
+      "Thanh tien": 7000000
+    }
+  ]
+}]

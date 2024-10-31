@@ -1,0 +1,118 @@
+Cau 2
+a/ --thêm một document
+db.SV.insertOne({
+   Masv: "789012",
+   Hoten: "Le Thi B",
+   Ngaysinh: new Date("1999-05-15"),
+   Phai: "Nu",
+   Email: ["lethib@gmail.com", "b.le@gmail.com"],
+   Lop: { 
+     Malop: "L02", 
+     Tenlop: "Kinh te" 
+   },
+   Monhoc: [
+     { 
+       Mamh: "MH03", 
+       Tenmh: "Kinh Te Vi Mo", 
+       Sotc: 3, 
+       Diem: 7.5 
+     },
+     { 
+       Mamh: "MH04", 
+       Tenmh: "Thue", 
+       Sotc: 2, 
+       Diem: 8.0 
+     }
+   ]
+})
+
+--thêm nhiều document
+db.SV.insertMany([
+   {
+      Masv: "345678",
+      Hoten: "Tran Van C",
+      Ngaysinh: new Date("2001-03-22"),
+      Phai: "Nam",
+      Email: ["tranvanc@gmail.com", "c.tran@gmail.com"],
+      Lop: { 
+        Malop: "L03", 
+        Tenlop: "Xay Dung" 
+      },
+      Monhoc: [
+        { 
+          Mamh: "MH05", 
+          Tenmh: "Ky Thuat Dien", 
+          Sotc: 4, 
+          Diem: 7.8 
+        },
+        { 
+          Mamh: "MH06", 
+          Tenmh: "Ket Cau", 
+          Sotc: 3, 
+          Diem: 8.2 
+        }
+      ]
+   },
+   {
+      Masv: "901234",
+      Hoten: "Pham Thi D",
+      Ngaysinh: new Date("2000-12-10"),
+      Phai: "Nu",
+      Email: ["phamthid@gmail.com", "d.pham@gmail.com"],
+      Lop: { 
+        Malop: "L04", 
+        Tenlop: "Quan Tri Kinh Doanh" 
+      },
+      Monhoc: [
+        { 
+          Mamh: "MH07", 
+          Tenmh: "Marketing", 
+          Sotc: 3, 
+          Diem: 8.0 
+        },
+        { 
+          Mamh: "MH08", 
+          Tenmh: "Quan Tri Tai Chinh", 
+          Sotc: 4, 
+          Diem: 8.5 
+        }
+      ]
+   }
+])
+b/ db.sv.deleteOne({ Masv: "sv005" })
+c/ db.sv.deleteMany({ "Lop.Malop": "103" })
+d/ db.sv.updateOne(
+   { Masv: "sv001" },
+   { $set: { Hoten: "Đỗ Nhật Lâm" } }
+)
+e/ db.sv.updateOne(
+   { Masv: "sv003" },
+   { $set: { Tuoi: 25, Phai: "Nữ", Hoten: "Trần Thị Lan" } }
+)
+f/ db.sv.updateOne(
+   { Masv: "sv003" },
+   { $set: { "NgoaiNgu.1": "Tiếng Hàn" } }
+)
+g/ db.sv.updateOne(
+   { Masv: "sv003" },
+   { $set: { "Monhoc.0.Diem": 9 } }
+)
+h/ db.sv.replaceOne(
+   { _id: ObjectId("60f73c2a5f1b2c6d2e48d9d3") },
+   {
+      Masv: "new_id",
+      Hoten: "New Name",
+      Ngaysinh: new Date("2000-01-01"),
+      Phai: "New Gender",
+      Email: ["new_email@gmail.com"],
+      Lop: { Malop: "New Malop", Tenlop: "New Tenlop" },
+      Monhoc: [
+        {
+          Mamh: "New Mamh",
+          Tenmh: "New Tenmh",
+          Sotc: 3,
+          Diem: 9
+        }
+      ]
+   }
+)

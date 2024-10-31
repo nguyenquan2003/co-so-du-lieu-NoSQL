@@ -1,0 +1,72 @@
+Cau 3
+a/ db.hoadon.insertMany([
+   {
+      "Ma hoa don": "HD002",
+      "Ngay lap": new Date("2023-05-10"),
+      "Khach hang": {
+         "Ma khach hang": "KH002",
+         "Ten khach hang": "Tran Thi C",
+         "Dia chi": "456 Duong DEF, Quan 2, TP.HCM"
+      },
+      "San pham ban": [
+         {
+            "Ma sp": "SP003",
+            "Ten sp": "Dien thoai Samsung",
+            "So luong": 1,
+            "Gia ban": 10000000,
+            "Thanh tien": 10000000
+         }
+      ]
+   },
+   {
+      "Ma hoa don": "HD003",
+      "Ngay lap": new Date("2022-08-15"),
+      "Khach hang": {
+         "Ma khach hang": "KH003",
+         "Ten khach hang": "Pham Van D",
+         "Dia chi": "789 Duong GHI, Quan 3, TP.HCM"
+      },
+      "San pham ban": [
+         {
+            "Ma sp": "SP004",
+            "Ten sp": "Tivi Sony",
+            "So luong": 2,
+            "Gia ban": 8000000,
+            "Thanh tien": 16000000
+         }
+      ]
+   }
+])
+b/ db.hoadon.deleteMany({ "Ngay lap": new Date("2020-03-25") })
+c/ db.hoadon.deleteMany({ "Khach hang.Ma khach hang": "KH001" })
+d/ db.hoadon.updateOne(
+   { "Ma hoa don": "H001" },
+   { $set: { "Ngay lap": new Date("2021-02-25") } }
+)
+e/ db.hoadon.updateMany(
+   { "Khach hang.Ma khach hang": "KH001" },
+   { 
+      $set: { 
+         "Khach hang.Ten khach hang": "Tran Thi Lan", 
+         "Khach hang.Dia chi": "TPHCM" 
+      } 
+   }
+)
+f/ db.hoadon.updateMany(
+   { "Khach hang.Ma khach hang": "KH003" },
+   { $set: { "Khach hang.Ten khach hang": "Do Thanh Binh" } }
+)
+g/ db.hoadon.updateOne(
+   { "Ma hoa don": "HD003" },
+   { 
+      $push: { 
+         "San pham ban": {
+            "Ma sp": "SP005",
+            "Ten sp": "May giat LG",
+            "So luong": 1,
+            "Gia ban": 7000000,
+            "Thanh tien": 7000000
+         }
+      }
+   }
+)
