@@ -1,0 +1,129 @@
+1/
+CREATE (:Person {Name: 'Lan', Age: 26});
+CREATE (:Person {Name: 'Tuấn', Age: 32});
+CREATE (:Person {Name: 'Châu', Age: 24});
+CREATE (:Person {Name: 'Minh', Age: 21});
+CREATE (:Person {Name: 'Nam', Age: 45});
+
+CREATE (:Company {Name: 'C2Net'});
+CREATE (:Company {Name: 'Tech2A'});
+CREATE (:Company {Name: 'MPA'});
+
+CREATE (:Technology {Type: 'Java'});
+CREATE (:Technology {Type: 'C#'});
+CREATE (:Technology {Type: 'Web'});
+CREATE (:Technology {Type: 'NoSQL'});
+
+MATCH (lan:Person {Name: 'Lan'}), (tuan:Person {Name: 'Tuấn'})
+CREATE (lan)-[:IS_FRIENDS_WITH {Since: 2015}]->(tuan);
+
+MATCH (lan:Person {Name: 'Lan'}), (csharp:Technology {Type: 'C#'})
+CREATE (lan)-[:LIKES]->(csharp);
+
+MATCH (lan:Person {Name: 'Lan'}), (java:Technology {Type: 'Java'})
+CREATE (lan)-[:LIKES]->(java);
+
+MATCH (lan:Person {Name: 'Lan'}), (tech2a:Company {Name: 'Tech2A'})
+CREATE (lan)-[:WORK_FOR]->(tech2a);
+
+MATCH (tuan:Person {Name: 'Tuấn'}), (minh:Person {Name: 'Minh'})
+CREATE (tuan)-[:IS_FRIENDS_WITH {Since: 2012}]->(minh);
+
+MATCH (tuan:Person {Name: 'Tuấn'}), (chau:Person {Name: 'Châu'})
+CREATE (tuan)-[:IS_FRIENDS_WITH {Since: 2017}]->(chau);
+
+MATCH (tuan:Person {Name: 'Tuấn'}), (web:Technology {Type: 'Web'})
+CREATE (tuan)-[:LIKES]->(web);
+
+MATCH (tuan:Person {Name: 'Tuấn'}), (nosql:Technology {Type: 'NoSQL'})
+CREATE (tuan)-[:LIKES]->(nosql);
+
+MATCH (chau:Person {Name: 'Châu'}), (lan:Person {Name: 'Lan'})
+CREATE (chau)-[:IS_FRIENDS_WITH {Since: 2016}]->(lan);
+
+MATCH (chau:Person {Name: 'Châu'}), (nam:Person {Name: 'Nam'})
+CREATE (chau)-[:IS_FRIENDS_WITH {Since: 2018}]->(nam);
+
+MATCH (chau:Person {Name: 'Châu'}), (minh:Person {Name: 'Minh'})
+CREATE (chau)-[:IS_FRIENDS_WITH {Since: 2018}]->(minh);
+
+MATCH (chau:Person {Name: 'Châu'}), (web:Technology {Type: 'Web'})
+CREATE (chau)-[:LIKES]->(web);
+
+MATCH (chau:Person {Name: 'Châu'}), (nosql:Technology {Type: 'NoSQL'})
+CREATE (chau)-[:LIKES]->(nosql);
+
+MATCH (chau:Person {Name: 'Châu'}), (tech2a:Company {Name: 'Tech2A'})
+CREATE (chau)-[:WORK_FOR]->(tech2a);
+
+MATCH (nam:Person {Name: 'Nam'}), (java:Technology {Type: 'Java'})
+CREATE (nam)-[:LIKES]->(java);
+
+MATCH (nam:Person {Name: 'Nam'}), (mpa:Company {Name: 'MPA'})
+CREATE (nam)-[:WORK_FOR]->(mpa);
+
+MATCH (minh:Person {Name: 'Minh'}), (nam:Person {Name: 'Nam'})
+CREATE (minh)-[:IS_FRIENDS_WITH {Since: 2018}]->(nam);
+
+MATCH (minh:Person {Name: 'Minh'}), (c2net:Company {Name: 'C2Net'})
+CREATE (minh)-[:WORK_FOR]->(c2net);
+
+2/
+a/
+MATCH (lan:Person {Name: 'Lan'})-[:LIKES]->(tech:Technology)
+RETURN tech.Type AS CongNgheLanThich;
+
+b/
+MATCH (person:Person)-[:LIKES]->(tech:Technology {Type: 'NoSQL'})
+RETURN person.Name AS TenNguoi, person.Age AS Tuoi;
+
+c/
+MATCH (person:Person)-[:WORK_FOR]->(company:Company {Name: 'Tech2A'})
+RETURN person.Name AS TenNguoi;
+
+d/
+MATCH (nam:Person {Name: 'Nam'})-[:IS_FRIENDS_WITH]->(friend:Person)-[:WORK_FOR]->(company:Company {Name: 'C2Net'})
+RETURN friend.Name AS TenBanCuaNam;
+
+e/
+MATCH (minh:Person {Name: 'Minh'})-[:IS_FRIENDS_WITH]->(friend:Person)
+RETURN count(friend) AS SoNguoiBanCuaMinh;
+
+f/
+MATCH (minh:Person {Name: 'Minh'})-[:IS_FRIENDS_WITH]->(friend:Person),
+      (lan:Person {Name: 'Lan'})-[:IS_FRIENDS_WITH]->(friend)
+RETURN count(friend) AS SoNguoiBanChungCuaMinhVaLan;
+
+g/
+MATCH (person:Person)-[:IS_FRIENDS_WITH]->(friend:Person)
+RETURN person.Name AS TenNguoi, count(friend) AS SoNguoiBan;
+
+h/
+MATCH (person:Person)-[:IS_FRIENDS_WITH]->(friend:Person)
+WITH person, count(friend) AS SoNguoiBan
+WHERE SoNguoiBan >= 2
+RETURN person.Name AS TenNguoi, SoNguoiBan;
+
+i/
+MATCH (person:Person)-[:LIKES]->(tech:Technology)
+WITH tech, count(person) AS SoNguoiThich
+WHERE SoNguoiThich >= 2
+RETURN tech.Type AS TenCongNghe, SoNguoiThich;
+
+j/
+MATCH (person:Person)-[:LIKES]->(tech:Technology)
+RETURN tech.Type AS TenCongNghe, collect(person.Name) AS DanhSachNguoiThich;
+
+k/
+MATCH (person:Person)-[:LIKES]->(tech:Technology)
+RETURN person.Name AS TenNguoi, person.Age AS Tuoi, collect(tech.Type) AS DanhSachCongNghe
+ORDER BY person.Age ASC;
+
+l/
+MATCH (tuan:Person {Name: 'Tuấn'})-[:IS_FRIENDS_WITH]->(friend:Person)-[:WORK_FOR]->(company:Company)
+RETURN company.Name AS TenCongTy;
+
+m/
+MATCH (person:Person)-[:LIKES]->(tech:Technology)
+WHERE tech.Type IN ['Web', 'Java']
+RETURN person.Name AS TenNguoi, collect(tech.Type) AS DanhSachCongNgheThich;

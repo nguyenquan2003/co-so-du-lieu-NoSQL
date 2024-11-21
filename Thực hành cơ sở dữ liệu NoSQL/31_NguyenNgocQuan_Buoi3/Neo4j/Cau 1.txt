@@ -1,0 +1,57 @@
+1/
+CREATE (:Khach {Makh: 'k001', TenKH: 'Bình', Diachi: 'TPHCM'});
+CREATE (:Khach {Makh: 'k002', TenKH: 'Châu', Diachi: 'TPHCM'});
+CREATE (:Khach {Makh: 'k003', TenKH: 'Minh', Diachi: 'Hà Nội'});
+
+CREATE (:Sanpham {Masp: 'sp01', Tensp: 'X', Dvt: 'kg'});
+CREATE (:Sanpham {Masp: 'sp02', Tensp: 'Y', Dvt: 'bộ'});
+
+MATCH (k:Khach {Makh: 'k001'}), (s:Sanpham {Masp: 'sp01'})
+CREATE (k)-[:MUA {Soluong: 5}]->(s);
+
+MATCH (k:Khach {Makh: 'k001'}), (s:Sanpham {Masp: 'sp02'})
+CREATE (k)-[:MUA {Soluong: 10}]->(s);
+
+MATCH (k:Khach {Makh: 'k002'}), (s:Sanpham {Masp: 'sp02'})
+CREATE (k)-[:MUA {Soluong: 7}]->(s);
+
+MATCH (k:Khach {Makh: 'k003'}), (s:Sanpham {Masp: 'sp02'})
+CREATE (k)-[:MUA {Soluong: 10}]->(s);
+
+2/
+a/
+MATCH (k:Khach)
+WHERE k.Diachi = 'TPHCM'
+RETURN k.Makh AS MaKhach, k.TenKH AS TenKhach;
+b/
+MATCH (s:Sanpham)
+WHERE s.Dvt = 'kg'
+RETURN s.Masp AS MaSanPham, s.Tensp AS TenSanPham;
+c/
+MATCH (k:Khach)-[:MUA]->(s:Sanpham)
+WHERE s.Tensp = 'Y'
+RETURN k.Makh AS MaKhach, k.TenKH AS TenKhach;
+d/
+MATCH (k:Khach)-[m:MUA]->(s:Sanpham)
+WHERE s.Tensp = 'X' AND m.Soluong >= 10
+RETURN k.Makh AS MaKhach, k.TenKH AS TenKhach;
+e/
+MATCH (k:Khach)-[:MUA]->(s1:Sanpham {Tensp: 'X'}),
+      (k)-[:MUA]->(s2:Sanpham {Tensp: 'Y'})
+RETURN k.Makh AS MaKhach, k.TenKH AS TenKhach;
+f/
+MATCH (k:Khach)-[:MUA]->(s:Sanpham {Tensp: 'Y'})
+WHERE NOT EXISTS ((k)-[:MUA]->(:Sanpham {Tensp: 'X'}))
+RETURN k.Makh AS MaKhach, k.TenKH AS TenKhach;
+g/
+MATCH (k:Khach)-[m:MUA]->(s:Sanpham)
+RETURN k.Makh AS MaKhach, k.TenKH AS TenKhach, count(s) AS SoMatHang;
+h/
+MATCH (k:Khach)-[:MUA]->(s:Sanpham)
+RETURN k.Makh AS MaKhach, k.TenKH AS TenKhach, collect(s.Tensp) AS DanhSachMatHang;
+i/
+MATCH (k:Khach {Diachi: 'TPHCM'})-[m:MUA]->(s:Sanpham)
+RETURN s.Tensp AS TenSanPham, sum(m.Soluong) AS TongSoLuongBan;
+j/
+MATCH (k:Khach)-[:MUA]->(s:Sanpham)
+RETURN s.Masp AS MaSanPham, s.Tensp AS TenSanPham, collect(k.TenKH) AS DanhSachKhachHang;

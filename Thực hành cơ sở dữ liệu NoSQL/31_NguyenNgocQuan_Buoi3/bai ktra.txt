@@ -1,0 +1,49 @@
+2/ Cho biết sản phẩm nào có đơn giá thấp nhất.
+db.KHACHHANG.aggregate([
+  { $unwind: "$HOADON" },
+  { $group: { _id: "$HOADON.TENSP", MIN_DONGIA: { $min: "$HOADON.DONGIA" } } },
+  { $sort: { MIN_DONGIA: 1 } },
+  { $limit: 1 }
+]);
+
+3/ Cho biết trong tháng 11/2024 có tất cả bao nhiêu bình luận được viết bởi tác giả “Đống Anh Đào”.
+db.KHACHHANG.aggregate([
+  { $unwind: "$BINHLUAN" },
+  { $match: { "BINHLUAN.TACGIA": "Đống Anh Đào", "BINHLUAN.NGAYVIET": { $regex: "^2024-11" } } },
+  { $count: "tong_binh_luan" }
+]);
+
+4/ Khách hàng “Trần Văn” đã mua bao nhiêu sản phẩm.
+ db.KHACHHANG.aggregate([
+  { $match: { TENKH: "Trần Văn" } },
+  { $unwind: "$HOADON" },
+  { $count: "tong_san_pham" }
+]);
+
+5/ Cho biết thông tin hóa đơn của khách hàng “Hồ Nguyễn Lý Sơn”.
+db.KHACHHANG.find({ TENKH: "Hồ Nguyễn Lý Sơn" }, { HOADON: 1, _id: 0 });
+
+6/ Cho biết hóa đơn có giá trị cao nhất trong tháng 11/2024.
+db.KHACHHANG.aggregate([
+  { $unwind: "$HOADON" },
+  { $match: { "HOADON.NGAYLAP": { $regex: "^2024-11" } } },
+  { $group: { _id: "$HOADON.MAHD", tong_gia_tri: { $sum: "$HOADON.DONGIA" } } },
+  { $sort: { tong_gia_tri: -1 } },
+  { $limit: 1 }
+]);
+
+7/ Có bao nhiêu bình luận được viết trong tháng 10/2024.
+db.KHACHHANG.aggregate([
+  { $unwind: "$BINHLUAN" },
+  { $match: { "BINHLUAN.NGAYVIET": { $regex: "^2024-10" } } },
+  { $count: "tong_binh_luan" }
+]);
+
+8/ Liệt kê tên sản phẩm và đơn giá trong từng hóa đơn.
+db.KHACHHANG.aggregate([
+  { $unwind: "$HOADON" },
+  { $project: { _id: 0, TENSP: "$HOADON.TENSP", DONGIA: "$HOADON.DONGIA" } }
+]);
+
+9/ Tạo chỉ mục hỗn hợp cho Khách hàng.
+db.KHACHHANG.createIndex({ TENKH: 1, DIENTHOAI: 1 });

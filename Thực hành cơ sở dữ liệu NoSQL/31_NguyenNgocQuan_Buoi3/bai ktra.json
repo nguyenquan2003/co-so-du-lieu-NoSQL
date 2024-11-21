@@ -1,0 +1,102 @@
+[
+  {
+    "_id": "5ed6e9aee555191b4c2afdec1",
+    "TENKH": "HỒ LÝ SƠN",
+    "DIENTHOAI": "0989898989",
+    "DIACHI": "141 LÊ TRỌNG TẤN, TP. HCM",
+    "HOADON": [
+      {
+        "MAHD": "MOU001",
+        "NGAYLAP": "2024-11-20",
+        "TENSP": "CHUỘT QUANG CÓ DÂY",
+        "DONGIA": 200
+      },
+      {
+        "MAHD": "MOU002",
+        "NGAYLAP": "2024-11-20",
+        "TENSP": "MÀN HÌNH CONG",
+        "DONGIA": 500
+      }
+    ],
+    "BINHLUAN": [
+      {
+        "TIEUDE": "MẪU HÀNG ĐANG CÓ",
+        "MOTA": "LINH KIỆN SỬ DỤNG TẠM ỔN",
+        "TACGIA": "TRẦN THỦY HOÀNG",
+        "SOLIKE": 110,
+        "NGAYVIET": "2024-11-20"
+      },
+      {
+        "TIEUDE": "HÀNG TỐT",
+        "MOTA": "Sản phẩm sử dụng rất hài lòng",
+        "TACGIA": "Đống Anh Đào",
+        "SOLIKE": 50,
+        "NGAYVIET": "2024-11-15"
+      }
+    ]
+  },
+  {
+    "_id": "5ed6e9aee555191b4c2afdec2",
+    "TENKH": "TRẦN VĂN",
+    "DIENTHOAI": "0912345678",
+    "DIACHI": "456 Nguyễn Trãi, Hà Nội",
+    "HOADON": [
+      {
+        "MAHD": "MOU003",
+        "NGAYLAP": "2024-11-21",
+        "TENSP": "BÀN PHÍM CƠ",
+        "DONGIA": 150
+      },
+      {
+        "MAHD": "MOU004",
+        "NGAYLAP": "2024-11-22",
+        "TENSP": "LOA BLUETOOTH",
+        "DONGIA": 300
+      },
+      {
+        "MAHD": "MOU005",
+        "NGAYLAP": "2024-11-23",
+        "TENSP": "Ổ CỨNG SSD",
+        "DONGIA": 250
+      }
+    ],
+    "BINHLUAN": [
+      {
+        "TIEUDE": "DỊCH VỤ TỐT",
+        "MOTA": "Hỗ trợ khách hàng rất tận tình",
+        "TACGIA": "Trần Văn",
+        "SOLIKE": 70,
+        "NGAYVIET": "2024-10-21"
+      }
+    ]
+  },
+  {
+    "_id": "5ed6e9aee555191b4c2afdec3",
+    "TENKH": "Hồ Nguyễn Lý Sơn",
+    "DIENTHOAI": "0976543210",
+    "DIACHI": "789 Nguyễn Huệ, TP. HCM",
+    "HOADON": [
+      {
+        "MAHD": "MOU006",
+        "NGAYLAP": "2024-11-25",
+        "TENSP": "TAI NGHE BLUETOOTH",
+        "DONGIA": 100
+      },
+      {
+        "MAHD": "MOU007",
+        "NGAYLAP": "2024-11-26",
+        "TENSP": "LAPTOP ASUS",
+        "DONGIA": 800
+      }
+    ],
+    "BINHLUAN": [
+      {
+        "TIEUDE": "GÓP Ý SẢN PHẨM",
+        "MOTA": "Sản phẩm chất lượng tốt, nhưng giao hàng chậm.",
+        "TACGIA": "Hồ Nguyễn Lý Sơn",
+        "SOLIKE": 20,
+        "NGAYVIET": "2024-11-26"
+      }
+    ]
+  }
+]
