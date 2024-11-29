@@ -1,0 +1,18 @@
+﻿n1,r,n2
+"(:Student {StudentName: Ana,StudentID: 1})",[:ENROLLED_IN],"(:Course {CourseName: Databases,CourseNumber: 1})"
+"(:Student {StudentName: Ana,StudentID: 1})",[:WORKS_ON {hours: 1}],"(:Project {ProjectName: eCommerce database,ProjectNumber: 34})"
+"(:Student {StudentName: Ana,StudentID: 1})",[:WORKS_ON {hours: 2}],"(:Project {ProjectName: eCommerce website,ProjectNumber: 24})"
+"(:Student {StudentName: Peter,StudentID: 2})",[:ENROLLED_IN],"(:Course {CourseName: Databases,CourseNumber: 1})"
+"(:Student {StudentName: Peter,StudentID: 2})",[:WORKS_ON {hours: 3}],"(:Project {ProjectName: eCommerce database,ProjectNumber: 34})"
+"(:Student {StudentName: Peter,StudentID: 2})",[:WORKS_ON {hours: 4}],"(:Project {ProjectName: eCommerce website,ProjectNumber: 24})"
+"(:Student {StudentName: Peter,StudentID: 2})",[:WORKS_ON {hours: 1}],"(:Project {ProjectName: User interface,ProjectNumber: 13})"
+"(:Student {StudentName: Peter,StudentID: 2})",[:WORKS_ON {hours: 1}],"(:Project {ProjectName: Reporting,ProjectNumber: 26})"
+"(:Student {StudentName: John,StudentID: 3})",[:ENROLLED_IN],"(:Course {CourseName: Programming,CourseNumber: 2})"
+"(:Student {StudentName: John,StudentID: 3})",[:WORKS_ON {hours: 1}],"(:Project {ProjectName: eCommerce database,ProjectNumber: 34})"
+"(:Student {StudentName: John,StudentID: 3})",[:WORKS_ON {hours: 2}],"(:Project {ProjectName: eCommerce website,ProjectNumber: 24})"
+"(:Student {StudentName: John,StudentID: 3})",[:WORKS_ON {hours: 3}],"(:Project {ProjectName: Reporting,ProjectNumber: 26})"
+"(:Student {StudentName: Stine,StudentID: 4})",[:ENROLLED_IN],"(:Course {CourseName: Databases,CourseNumber: 1})"
+"(:Course {CourseName: Databases,CourseNumber: 1})",[:TAKES_PLACE_IN],(:Room {RoomName: Pascal})
+"(:Course {CourseName: Databases,CourseNumber: 1})",[:TAKES_PLACE_IN],(:Room {RoomName: Alpha})
+"(:Course {CourseName: Databases,CourseNumber: 1})",[:TAKES_PLACE_IN],(:Room {RoomName: Beta})
+"(:Course {CourseName: Programming,CourseNumber: 2})",[:TAKES_PLACE_IN],(:Room {RoomName: Seminar C})

@@ -1,0 +1,156 @@
+MATCH (n) DETACH DELETE n;
+CREATE (s1:Student {StudentID: "1", StudentName: "Ana"});
+CREATE (s2:Student {StudentID: "2", StudentName: "Peter"});
+CREATE (s3:Student {StudentID: "3", StudentName: "John"});
+CREATE (s4:Student {StudentID: "4", StudentName: "Stine"});
+CREATE (s5:Student {StudentID: "5", StudentName: "Michael"});
+
+CREATE (c1:Course {CourseNumber: "1", CourseName: "Databases"});
+CREATE (c2:Course {CourseNumber: "2", CourseName: "Programming"});
+CREATE (c3:Course {CourseNumber: "3", CourseName: "Graphics"});
+
+CREATE (p1:Project {ProjectNumber: "34", ProjectName: "eCommerce database"});
+CREATE (p2:Project {ProjectNumber: "24", ProjectName: "eCommerce website"});
+CREATE (p3:Project {ProjectNumber: "13", ProjectName: "User interface"});
+CREATE (p4:Project {ProjectNumber: "26", ProjectName: "Reporting"});
+
+CREATE (r1:Room {RoomName: "Pascal"});
+CREATE (r2:Room {RoomName: "Seminar C"});
+CREATE (r3:Room {RoomName: "Alpha"});
+CREATE (r4:Room {RoomName: "Beta"});
+
+// Liên kết giữa Course và Room
+MATCH (c1:Course {CourseNumber: "1"}), (r1:Room {RoomName: "Pascal"})
+CREATE (c1)-[:TAKES_PLACE_IN]->(r1);
+
+MATCH (c1:Course {CourseNumber: "1"}), (r3:Room {RoomName: "Alpha"})
+CREATE (c1)-[:TAKES_PLACE_IN]->(r3);
+
+MATCH (c1:Course {CourseNumber: "1"}), (r4:Room {RoomName: "Beta"})
+CREATE (c1)-[:TAKES_PLACE_IN]->(r4);
+
+MATCH (c2:Course {CourseNumber: "2"}), (r2:Room {RoomName: "Seminar C"})
+CREATE (c2)-[:TAKES_PLACE_IN]->(r2);
+
+// Liên kết giữa Student và Course (ENROLLED_IN)
+MATCH (s1:Student {StudentID: "1"}), (c1:Course {CourseNumber: "1"})
+CREATE (s1)-[:ENROLLED_IN]->(c1);
+
+MATCH (s2:Student {StudentID: "2"}), (c1:Course {CourseNumber: "1"})
+CREATE (s2)-[:ENROLLED_IN]->(c1);
+
+MATCH (s3:Student {StudentID: "3"}), (c2:Course {CourseNumber: "2"})
+CREATE (s3)-[:ENROLLED_IN]->(c2);
+
+MATCH (s4:Student {StudentID: "4"}), (c1:Course {CourseNumber: "1"})
+CREATE (s4)-[:ENROLLED_IN]->(c1);
+
+// Liên kết giữa Student và Project (WORKS_ON)
+MATCH (s1:Student {StudentID: "1"}), (p1:Project {ProjectNumber: "34"})
+CREATE (s1)-[:WORKS_ON {hours: 1}]->(p1);
+
+MATCH (s1:Student {StudentID: "1"}), (p2:Project {ProjectNumber: "24"})
+CREATE (s1)-[:WORKS_ON {hours: 2}]->(p2);
+
+MATCH (s2:Student {StudentID: "2"}), (p1:Project {ProjectNumber: "34"})
+CREATE (s2)-[:WORKS_ON {hours: 3}]->(p1);
+
+MATCH (s2:Student {StudentID: "2"}), (p2:Project {ProjectNumber: "24"})
+CREATE (s2)-[:WORKS_ON {hours: 4}]->(p2);
+
+MATCH (s2:Student {StudentID: "2"}), (p3:Project {ProjectNumber: "13"})
+CREATE (s2)-[:WORKS_ON {hours: 1}]->(p3);
+
+MATCH (s2:Student {StudentID: "2"}), (p4:Project {ProjectNumber: "26"})
+CREATE (s2)-[:WORKS_ON {hours: 1}]->(p4);
+
+MATCH (s3:Student {StudentID: "3"}), (p1:Project {ProjectNumber: "34"})
+CREATE (s3)-[:WORKS_ON {hours: 1}]->(p1);
+
+MATCH (s3:Student {StudentID: "3"}), (p2:Project {ProjectNumber: "24"})
+CREATE (s3)-[:WORKS_ON {hours: 2}]->(p2);
+
+MATCH (s3:Student {StudentID: "3"}), (p4:Project {ProjectNumber: "26"})
+CREATE (s3)-[:WORKS_ON {hours: 3}]->(p4);
+
+MATCH (n) RETURN n;
+
+MATCH ()-[r]->() RETURN r;
+
+
+
+
+
+
+//hiện thị quan hệ:
+MATCH (n1)-[r]->(n2)
+RETURN n1, r, n2;
+
+a. Hiển thị danh sách gồm mã khóa học, tên khóa học
+MATCH (c:Course)
+RETURN c.CourseNumber, c.CourseName;
+b. Hiển thị số giờ mà sinh viên Ana làm đề án có tên "eCommerce database"
+MATCH (s:Student {StudentName: "Ana"})-[:WORKS_ON]->(p:Project {ProjectName: "eCommerce database"})
+RETURN SUM(p.hours) AS hours;
+
+c. Cho biết mã và tên những sinh viên đăng ký khóa học tên là "Databases"
+MATCH (s:Student)-[:ENROLLED_IN]->(c:Course {CourseName: "Databases"})
+RETURN s.StudentID, s.StudentName;
+d. Cho biết mã và tên những khóa học có từ 2 sinh viên
+MATCH (s:Student)-[:ENROLLED_IN]->(c:Course)
+WITH c, COUNT(s) AS num_students
+WHERE num_students >= 2
+RETURN c.CourseNumber, c.CourseName;
+
+e/ Liệt kê những khóa học được đăng ký bởi sinh viên có tên là John
+MATCH (s:Student {StudentName: "John"})-[:ENROLLED_IN]->(c:Course)
+RETURN c.CourseNumber, c.CourseName;
+
+f/ Mã và tên những khóa học nào diễn ra tại phòng có tên là Seminar C
+MATCH (c:Course)-[:TAKES_PLACE_IN]->(r:Room {RoomName: "Seminar C"})
+RETURN c.CourseNumber, c.CourseName;
+
+g/ Những khóa học nào diễn ra tại ít nhất 2 phòng. Thông tin liệt kê gồm: mã
+khóa học, tên khóa học.
+MATCH (c:Course)-[:TAKES_PLACE_IN]->(r:Room)
+WITH c, COUNT(DISTINCT r) AS num_rooms
+WHERE num_rooms >= 2
+RETURN c.CourseNumber, c.CourseName;
+
+h/ Liệt kê mã, tên những sinh viên đăng ký khóa học diễn ra tại phòng Seminar C
+MATCH (s:Student)-[:ENROLLED_IN]->(c:Course)-[:TAKES_PLACE_IN]->(r:Room {RoomName: "Seminar C"})
+RETURN s.StudentID, s.StudentName;
+
+i/ Với những phòng mà khóa học (CourseNumber=1) diễn ra. Cho biết tên khóa
+học và tên phòng tương ứng.
+MATCH (c:Course {CourseNumber: "1"})-[:TAKES_PLACE_IN]->(r:Room)
+RETURN c.CourseName, r.RoomName;
+
+j/ Với sinh viên có StudentID là 1, cho biết tên sinh viên, tên dự án và số giờ mà
+sinh viên làm việc.
+MATCH (s:Student {StudentID: "1"})-[r:WORKS_ON]->(p:Project)
+RETURN s.StudentName AS studentName, p.ProjectName AS projectName, r.hours AS hours;
+
+
+k/ Với dự án có ProjectID là 24, cho biết tên dự án, tên sinh viên tham gia và số
+giờ mà sinh viên làm việc trên dự án đó.
+MATCH (s:Student)-[r:WORKS_ON]->(p:Project {ProjectNumber: "24"})
+RETURN p.ProjectName AS projectName, s.StudentName AS studentName, r.hours AS hours;
+
+l/ Liệt kê mã đề án, tên đề án và danh sách những nhân viên tham gia đề án đó.
+MATCH (s:Student)-[:WORKS_ON]->(p:Project)
+RETURN p.ProjectNumber, p.ProjectName, COLLECT(s.StudentName) AS participants;
+
+m/ Với những sinh viên làm việc trên 2 đề án, cho biết tên sinh viên và số lượng
+đề án mà sinh viên đó tham gia, sắp xếp giảm dần theo số lượng đề án.
+MATCH (s:Student)-[:WORKS_ON]->(p:Project)
+WITH s, COUNT(DISTINCT p) AS num_projects
+WHERE num_projects > 2
+RETURN s.StudentName, num_projects
+ORDER BY num_projects DESC;
+
+n/ Với danh sách dự án cho trước [User interface, Reporting], liệt kê những sinh
+viên tham gia tương ứng.
+MATCH (s:Student)-[:WORKS_ON]->(p:Project)
+WHERE p.ProjectName IN ["User interface", "Reporting"]
+RETURN s.StudentName, p.ProjectName;

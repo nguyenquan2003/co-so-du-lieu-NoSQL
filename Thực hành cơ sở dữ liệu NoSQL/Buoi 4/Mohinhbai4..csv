@@ -1,0 +1,13 @@
+﻿n,r,m
+(),[:MANAGES],()
+(),[:MANAGES],()
+(),[:MANAGES],()
+(),[:MANAGES],()
+(),[:WORKS_ON],()
+(),[:WORKS_ON],()
+(),"[:PURCHASED {purchaseDate: 2024-01-15,quantity: 1}]",()
+(),[:HAS_INTEREST {interestLevel: High}],()
+(),[:HAS_NEED {needPriority: High}],()
+(),"[:PURCHASED {purchaseDate: 2024-02-20,quantity: 2}]",()
+(),[:HAS_INTEREST {interestLevel: Medium}],()
+(),[:HAS_NEED {needPriority: Low}],()

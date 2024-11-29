@@ -1,0 +1,27 @@
+﻿n
+"(:TotalManager {ManagerName: John Doe,ManagerID: 1})"
+"(:AreaManager {AreaName: Hanoi,AreaManagerName: Alice,AreaManagerID: 1})"
+"(:AreaManager {AreaName: Ho Chi Minh City,AreaManagerName: Bob,AreaManagerID: 2})"
+"(:Employee {Area: Hanoi,EmployeeID: 1,EmployeeName: Charlie})"
+"(:Employee {Area: Ho Chi Minh City,EmployeeID: 2,EmployeeName: David})"
+"(:Customer {CustomerPhone: 123456789,CustomerEmail: linh@email.com,CustomerID: 1,CustomerName: Linh})"
+"(:Customer {CustomerPhone: 987654321,CustomerEmail: hung@email.com,CustomerID: 2,CustomerName: Hung})"
+"(:Product {ProductName: Laptop,ProductCategory: Electronics,ProductID: 1})"
+"(:Product {ProductName: Phone,ProductCategory: Electronics,ProductID: 2})"
+"(:Interest {InterestID: 1,InterestName: Technology})"
+"(:Interest {InterestID: 2,InterestName: Music})"
+"(:Need {NeedName: Upgrade Phone,NeedID: 1})"
+"(:Need {NeedName: Buy New Laptop,NeedID: 2})"
+()
+()
+()
+()
+()
+()
+()
+()
+()
+()
+()
+()
+()

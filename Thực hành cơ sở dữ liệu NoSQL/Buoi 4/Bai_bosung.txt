@@ -1,0 +1,28 @@
+import file csv vào thư mục import của project
+
+
+LOAD CSV WITH HEADERS FROM 'file:///images.csv' AS row
+WITH row
+MERGE (i:Image {id: row.id, name: row.name, file_path: row.file_path  })
+WITH row, i
+WHERE row.id CONTAINS "_"
+MATCH (parent:Image {id: split(row.id, "_")[0]}) 
+MERGE (parent)-[:HAS_SEGMENT]->(i)
+tạo mối quan hệ cho các nút con
+
+MATCH (i:Image)-[:HAS_SEGMENT]->(s1:Image), (i)-[:HAS_SEGMENT]->(s2:Image)
+WHERE s1 <> s2  // Đảm bảo rằng s1 và s2 là các phân đoạn khác nhau
+WITH i, s1, s2
+ORDER BY s1.id  // Sắp xếp phân đoạn theo ID hoặc thứ tự nhất định
+MERGE (s1)-[:CONNECTED]->(s2)  // Tạo mối quan hệ giữa các phân đoạn
+
+
+tạo quan hệ cho các nút gốc
+MATCH (i1:Image), (i2:Image)
+WHERE i1.id <> i2.id  // Đảm bảo rằng các ảnh gốc khác nhau
+WITH i1, i2
+MERGE (i1)-[:CONNECTED_TO]->(i2)  // Tạo mối quan hệ 'CONNECTED_TO' giữa các ảnh gốc
+
+
+MATCH (i:Image{id:'000000001761'})-[:HAS_SEGMENT]->(s:Image)
+RETURN i.id, s.id

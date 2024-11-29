@@ -1,0 +1,119 @@
+Câu1:Hãy thiết kế mô hình đồ thị cho hệ thống được mô tả trên.
+1. Các loại nút (Nodes):
+
+Tổng quản lý (TotalManager)
+Quản lý khu vực (AreaManager)
+Nhân viên chăm sóc khách hàng (Employee)
+Khách hàng (Customer)
+Sản phẩm (Product)
+
+2.Thông tin các loại Nút (Nodes):
+TotalManager có các thuộc tính như Name, ID.
+AreaManager  có thuộc tính như AreaName, ID, Region.
+Employee  có thuộc tính như EmployeeName, EmployeeID.
+Customer có thuộc tính như CustomerName, CustomerID, Preferences.
+Product có thuộc tính như ProductID, ProductName, Category.
+
+3.Các mối quan hệ:
+
+TotalManager quản lý nhiều AreaManager (mối quan hệ: MANAGES).
+AreaManager quản lý nhiều Employee (mối quan hệ: MANAGES).
+Employee chăm sóc nhiều Customer (mối quan hệ: SERVES).
+Customer mua nhiều Product (mối quan hệ: BUYS)
+
+4.Mô hình các mối quan hệ:
+TotalManager – [:MANAGES] –> AreaManager
+AreaManager – [:MANAGES] –> Employee
+Employee – [:SERVES] –> Customer
+Customer – [:BUYS] –> Product
+
+Câu 2:Tạo cơ sở dữ liệu dựa vào mô hình trên.
+// Tạo các nút
+CREATE (tm:TotalManager {ManagerID: "1", ManagerName: "John Doe"})
+CREATE (am1:AreaManager {AreaManagerID: "1", AreaManagerName: "Alice", AreaName: "Hanoi"})
+CREATE (am2:AreaManager {AreaManagerID: "2", AreaManagerName: "Bob", AreaName: "Ho Chi Minh City"})
+
+CREATE (e1:Employee {EmployeeID: "1", EmployeeName: "Charlie", Area: "Hanoi"})
+CREATE (e2:Employee {EmployeeID: "2", EmployeeName: "David", Area: "Ho Chi Minh City"})
+
+CREATE (c1:Customer {CustomerID: "1", CustomerName: "Linh", CustomerPhone: "123456789", CustomerEmail: "linh@email.com"})
+CREATE (c2:Customer {CustomerID: "2", CustomerName: "Hung", CustomerPhone: "987654321", CustomerEmail: "hung@email.com"})
+
+CREATE (p1:Product {ProductID: "1", ProductName: "Laptop", ProductCategory: "Electronics"})
+CREATE (p2:Product {ProductID: "2", ProductName: "Phone", ProductCategory: "Electronics"})
+
+CREATE (i1:Interest {InterestID: "1", InterestName: "Technology"})
+CREATE (i2:Interest {InterestID: "2", InterestName: "Music"})
+
+CREATE (n1:Need {NeedID: "1", NeedName: "Upgrade Phone"})
+CREATE (n2:Need {NeedID: "2", NeedName: "Buy New Laptop"})
+
+// Tạo các mối quan hệ
+CREATE (tm)-[:MANAGES]->(am1)
+CREATE (tm)-[:MANAGES]->(am2)
+
+CREATE (am1)-[:MANAGES]->(e1)
+CREATE (am2)-[:MANAGES]->(e2)
+
+CREATE (e1)-[:WORKS_ON]->(c1)
+CREATE (e2)-[:WORKS_ON]->(c2)
+
+CREATE (c1)-[:PURCHASED {purchaseDate: "2024-01-15", quantity: 1}]->(p1)
+CREATE (c2)-[:PURCHASED {purchaseDate: "2024-02-20", quantity: 2}]->(p2)
+
+CREATE (c1)-[:HAS_INTEREST {interestLevel: "High"}]->(i1)
+CREATE (c2)-[:HAS_INTEREST {interestLevel: "Medium"}]->(i2)
+
+CREATE (c1)-[:HAS_NEED {needPriority: "High"}]->(n2)
+CREATE (c2)-[:HAS_NEED {needPriority: "Low"}]->(n1)
+
+3. Tạo 5 câu truy vấn
+
+Câu truy vấn 1: Hiển thị danh sách tất cả các nhân viên cùng với tên khu vực làm việc của họ
+MATCH (e:Employee)
+RETURN e.EmployeeName, e.Area;
+
+Câu truy vấn 2: Liệt kê tất cả các sản phẩm mà khách hàng "Linh" đã mua cùng với số lượng
+MATCH (c:Customer {CustomerName: "Linh"})-[:PURCHASED]->(p:Product)
+RETURN c.CustomerName, p.ProductName, p.ProductCategory, COUNT(p) AS quantity;
+
+Câu truy vấn 3: Hiển thị tất cả các quản lý khu vực cùng với các nhân viên mà họ quản lý
+MATCH (am:AreaManager)-[:MANAGES]->(e:Employee)
+RETURN am.AreaManagerName, e.EmployeeName;
+
+Câu truy vấn 4: Tìm tất cả các khách hàng có sự quan tâm "High" trong lĩnh vực "Technology" và sản phẩm họ đã mua
+MATCH (c:Customer)-[:HAS_INTEREST {interestLevel: "High"}]->(i:Interest {InterestName: "Technology"})-[:PURCHASED]->(p:Product)
+RETURN c.CustomerName, p.ProductName, i.InterestName;
+
+
+Câu truy vấn 5: Hiển thị tất cả các khách hàng cùng với nhu cầu của họ, sản phẩm đã mua và các nhân viên đã làm việc với họ
+MATCH (c:Customer)-[:HAS_NEED]->(n:Need),
+      (c)-[:PURCHASED]->(p:Product),
+      (e:Employee)-[:WORKS_ON]->(c)
+RETURN c.CustomerName, n.NeedName, p.ProductName, e.EmployeeName;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
