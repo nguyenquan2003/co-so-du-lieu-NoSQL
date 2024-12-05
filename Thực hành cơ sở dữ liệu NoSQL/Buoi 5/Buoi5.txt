@@ -1,0 +1,602 @@
+Bài 3.1
+
+
+CREATE TABLE khach_by_quoc_tich (
+    quoc_tich TEXT,
+    cccd TEXT,
+    ho_ten TEXT,
+    PRIMARY KEY (quoc_tich, cccd)
+);
+
+
+CREATE TABLE tour_by_gia_va_diem_den (
+    gia INT,
+    diem_den TEXT,
+    ma_tour TEXT,
+    thoi_gian TEXT,
+    lich_trinh TEXT,
+    PRIMARY KEY ((gia), diem_den, ma_tour)
+) WITH CLUSTERING ORDER BY (diem_den ASC, ma_tour ASC);
+
+
+
+CREATE TABLE tour_by_ma_tour (
+    ma_tour TEXT,
+    thoi_gian TEXT,
+    PRIMARY KEY (ma_tour)
+);
+
+
+CREATE TABLE khachsan_by_diem_tham_quan (
+    diem_tham_quan TEXT,
+    ma_khach_san TEXT,
+    dia_diem TEXT,
+    gia INT,
+    PRIMARY KEY (diem_tham_quan, ma_khach_san)
+);
+
+
+CREATE TABLE khachsan_by_dia_diem (
+    dia_diem TEXT,
+    ma_khach_san TEXT,
+    gia INT,
+    PRIMARY KEY (dia_diem, ma_khach_san)
+);
+
+
+CREATE TABLE diadiem_by_ten (
+    ten_diadiem TEXT,
+    mon_an TEXT,
+    thoi_tiet TEXT,
+    ngay DATE,
+    PRIMARY KEY (ten_diadiem, ngay)
+);
+
+CREATE TABLE ve_by_ma_ve (
+    ma_ve TEXT,
+    ma_tour TEXT,
+    thoi_gian_mua DATE,
+    PRIMARY KEY (ma_ve)
+);
+
+CREATE TABLE ve_by_ma_tour (
+    ma_tour TEXT,
+    ma_ve TEXT,
+    thoi_gian_mua DATE,
+    PRIMARY KEY (ma_tour, thoi_gian_mua)
+);
+
+
+-- Dữ liệu cho bảng KHACH
+INSERT INTO khach_by_quoc_tich (quoc_tich, cccd, ho_ten) VALUES ('Malaysia', '123456789', 'Nguyễn Văn A');
+INSERT INTO khach_by_quoc_tich (quoc_tich, cccd, ho_ten) VALUES ('Malaysia', '987654321', 'Trần Thị B');
+INSERT INTO khach_by_quoc_tich (quoc_tich, cccd, ho_ten) VALUES ('Trung Quốc', '234567890', 'Liu Wei');
+INSERT INTO khach_by_quoc_tich (quoc_tich, cccd, ho_ten) VALUES ('Trung Quốc', '345678901', 'Wang Mei');
+INSERT INTO khach_by_quoc_tich (quoc_tich, cccd, ho_ten) VALUES ('Việt Nam', '456789012', 'Phạm Minh C');
+
+-- Dữ liệu cho bảng TOUR
+INSERT INTO tour_by_gia_va_diem_den (gia, diem_den, ma_tour, thoi_gian, lich_trinh) VALUES (7000000, 'Hạ Long', 'TOU001', '5 ngày 4 đêm', 'Khám phá Vịnh Hạ Long');
+INSERT INTO tour_by_gia_va_diem_den (gia, diem_den, ma_tour, thoi_gian, lich_trinh) VALUES (12000000, 'Hạ Long', 'TOU002', '6 ngày 5 đêm', 'Khám phá Hạ Long và Hải Phòng');
+INSERT INTO tour_by_gia_va_diem_den (gia, diem_den, ma_tour, thoi_gian, lich_trinh) VALUES (9000000, 'Hạ Long', 'TOU003', '4 ngày 3 đêm', 'Khám phá Vịnh Hạ Long, Tuần Châu');
+INSERT INTO tour_by_gia_va_diem_den (gia, diem_den, ma_tour, thoi_gian, lich_trinh) VALUES (9500000, 'Hạ Long', 'TOU004', '5 ngày 4 đêm', 'Khám phá Vịnh Hạ Long và đảo Cô Tô');
+INSERT INTO tour_by_gia_va_diem_den (gia, diem_den, ma_tour, thoi_gian, lich_trinh) VALUES (7000000, 'Nha Trang', 'TOU005', '6 ngày 5 đêm', 'Khám phá biển Nha Trang');
+
+-- Dữ liệu cho bảng KHACHSAN
+INSERT INTO khachsan_by_diem_tham_quan (diem_tham_quan, ma_khach_san, dia_diem, gia) VALUES ('Thác mơ', 'KS001', 'Hạ Long', 200000);
+INSERT INTO khachsan_by_diem_tham_quan (diem_tham_quan, ma_khach_san, dia_diem, gia) VALUES ('Thác mơ', 'KS002', 'Quảng Ninh', 250000);
+INSERT INTO khachsan_by_diem_tham_quan (diem_tham_quan, ma_khach_san, dia_diem, gia) VALUES ('Vịnh Hạ Long', 'KS003', 'Hạ Long', 500000);
+INSERT INTO khachsan_by_diem_tham_quan (diem_tham_quan, ma_khach_san, dia_diem, gia) VALUES ('Thác mơ', 'KS004', 'Ninh Bình', 300000);
+
+INSERT INTO khachsan_by_dia_diem (dia_diem, ma_khach_san, gia) VALUES ('Hạ Long', 'KS005', 350000);
+INSERT INTO khachsan_by_dia_diem (dia_diem, ma_khach_san, gia) VALUES ('Hạ Long', 'KS006', 400000);
+INSERT INTO khachsan_by_dia_diem (dia_diem, ma_khach_san, gia) VALUES ('Hạ Long', 'KS007', 450000);
+INSERT INTO khachsan_by_dia_diem (dia_diem, ma_khach_san, gia) VALUES ('Hạ Long', 'KS008', 200000);
+
+-- Dữ liệu cho bảng DIADIEM
+INSERT INTO diadiem_by_ten (ten_diadiem, mon_an, thoi_tiet, ngay) VALUES ('Suối mơ', 'Bánh cuốn', 'Mưa nhẹ', '2024-10-20');
+INSERT INTO diadiem_by_ten (ten_diadiem, mon_an, thoi_tiet, ngay) VALUES ('Suối mơ', 'Chả cá', 'Mưa nhẹ', '2024-10-20');
+INSERT INTO diadiem_by_ten (ten_diadiem, mon_an, thoi_tiet, ngay) VALUES ('Cồng rồng Đà Nẵng', 'Mì Quảng', 'Nắng', '2024-10-20');
+INSERT INTO diadiem_by_ten (ten_diadiem, mon_an, thoi_tiet, ngay) VALUES ('Cồng rồng Đà Nẵng', 'Bánh xèo', 'Nắng', '2024-10-20');
+
+-- Dữ liệu cho bảng VE
+INSERT INTO ve_by_ma_ve (ma_ve, ma_tour, thoi_gian_mua) VALUES ('VE001', 'TOU001', '2024-09-15');
+INSERT INTO ve_by_ma_ve (ma_ve, ma_tour, thoi_gian_mua) VALUES ('VE002', 'TOU002', '2024-10-10');
+INSERT INTO ve_by_ma_ve (ma_ve, ma_tour, thoi_gian_mua) VALUES ('VE003', 'TOU003', '2024-08-25');
+INSERT INTO ve_by_ma_ve (ma_ve, ma_tour, thoi_gian_mua) VALUES ('VE004', 'TOU004', '2024-07-20');
+INSERT INTO ve_by_ma_ve (ma_ve, ma_tour, thoi_gian_mua) VALUES ('VE005', 'TOU005', '2024-06-10');
+
+
+-- Chèn dữ liệu mẫu vào bảng tour_by_ma_tour
+INSERT INTO tour_by_ma_tour (ma_tour, thoi_gian) VALUES ('TOU001', '5 ngày 4 đêm');
+INSERT INTO tour_by_ma_tour (ma_tour, thoi_gian) VALUES ('TOU002', '6 ngày 5 đêm');
+INSERT INTO tour_by_ma_tour (ma_tour, thoi_gian) VALUES ('TOU003', '4 ngày 3 đêm');
+INSERT INTO tour_by_ma_tour (ma_tour, thoi_gian) VALUES ('TOU004', '5 ngày 4 đêm');
+INSERT INTO tour_by_ma_tour (ma_tour, thoi_gian) VALUES ('TOU005', '6 ngày 5 đêm');
+
+
+
+-- Tìm những khách du lịch có quốc tịch là “Malaysia”.
+
+SELECT * 
+FROM khach_by_quoc_tich
+WHERE quoc_tich = 'Malaysia';
+
+
+-- Có bao nhiêu khách du lịch có quốc tịch là “Trung quốc”.
+
+SELECT COUNT(*) 
+FROM khach_by_quoc_tich
+WHERE quoc_tich = 'Trung Quốc';
+
+
+-- Cho biết lịch trình của những tour có giá từ 5 triệu đến 10 triệu và điểm đến là
+
+SELECT gia, lich_trinh, diem_den
+FROM tour_by_gia_va_diem_den
+WHERE gia >= 5000000 AND gia <= 10000000
+ALLOW FILTERING;
+
+
+
+-- Cho biết thời gian thực hiện của Tour có mã “TOU005”.
+
+SELECT thoi_gian
+FROM tour_by_ma_tour
+WHERE ma_tour = 'TOU005';
+
+
+-- Cho biết những khách sạn nào có địa điểm gần điểm tham quan là “Thác mơ”.
+
+
+SELECT ma_khach_san, dia_diem, gia
+FROM khachsan_by_diem_tham_quan
+WHERE diem_tham_quan = 'Thác mơ';
+
+
+-- Cho biết giá cao nhất, thấp nhất của những khách sạn có địa điểm tại TP Hạ Long.
+
+
+SELECT MIN(gia) AS gia_thap_nhat, MAX(gia) AS gia_cao_nhat
+FROM khachsan_by_dia_diem
+WHERE dia_diem = 'Hạ Long';
+
+
+-- Cho biết những món ăn ẩm thực nào của địa điểm tham quan “Suối mơ”
+
+SELECT mon_an
+FROM diadiem_by_ten
+WHERE ten_diadiem = 'Suối mơ';
+
+
+
+-- Cho biết thông tin thời tiết ngày 20/10/2024 của địa điểm du lịch “Cồng rồng Đà nẵng”.
+
+
+SELECT thoi_tiet
+FROM diadiem_by_ten
+WHERE ten_diadiem = 'Cồng rồng Đà Nẵng' AND ngay = '2024-10-20';
+
+
+-- Cho biết thông tin khách đã book vé có mã là “VE001” cho tour Sài gòn – Nha trang và thời gian mua vé là tháng 9/2024.
+
+
+SELECT ma_tour, thoi_gian_mua
+FROM ve_by_ma_ve
+WHERE ma_ve = 'VE001';
+
+
+
+-- 10.Vé có mã “VE003” đã được mua vào thời gian nào.
+
+
+SELECT ma_tour, thoi_gian_mua
+FROM ve_by_ma_ve
+WHERE ma_ve = 'VE001';
+
+
+
+Bài 3.2
+
+
+CREATE TABLE IF NOT EXISTS congdans (
+    cccd UUID PRIMARY KEY,
+    ho_ten TEXT,
+    quoc_tich TEXT,
+    dia_chi_cu_tru TEXT,
+    nam_sinh INT,
+    gioi_tinh TEXT
+);
+
+CREATE TABLE IF NOT EXISTS diaphuongs (
+    ma_dia_phuong UUID PRIMARY KEY,
+    ten_dia_phuong TEXT,
+    quan_huyen TEXT,
+    tinh_thanh TEXT,
+    danh_sach_cong_dan SET<UUID>  -- Liên kết đến bảng CONGDAN
+);
+CREATE TABLE IF NOT EXISTS hokhaus (
+    ma_ho_khau UUID PRIMARY KEY,
+    dia_chi TEXT,
+    ten_chu_ho TEXT,
+    danh_sach_thanh_vien SET<UUID>  -- Liên kết đến bảng CONGDAN
+);
+CREATE TABLE IF NOT EXISTS quanhecongdans (
+    cccd UUID,  -- Mã công dân
+    nam_sinh INT,
+    ten_nguoi_quan_he TEXT,
+    moi_quan_he TEXT,  -- Cha/mẹ/anh/chị/em/con
+    PRIMARY KEY (cccd, moi_quan_he)
+);
+CREATE TABLE IF NOT EXISTS taisans (
+    cccd UUID,  -- Mã công dân
+    ma_tai_san UUID PRIMARY KEY,
+    ten_tai_san TEXT,
+    tri_gia DECIMAL,
+    mo_ta TEXT
+);
+CREATE TABLE IF NOT EXISTS diaphuongs_by_ma_dia_phuong (
+    ma_dia_phuong UUID PRIMARY KEY,
+    ten_dia_phuong TEXT,
+    quan_huyen TEXT,
+    tinh_thanh TEXT,
+    danh_sach_cong_dan SET<UUID>
+);
+
+CREATE TABLE IF NOT EXISTS hokhaus (
+    ma_ho_khau UUID PRIMARY KEY,
+    dia_chi TEXT,
+    ten_chu_ho TEXT,
+    danh_sach_thanh_vien SET<UUID>  -- Lưu danh sách thành viên
+);
+
+CREATE TABLE IF NOT EXISTS hokhaus_by_chu_ho (
+    ten_chu_ho TEXT,
+    nam_sinh INT,
+    ma_ho_khau UUID,
+    PRIMARY KEY (ten_chu_ho, nam_sinh)
+);
+
+CREATE TABLE IF NOT EXISTS quanhecongdans (
+    cccd UUID,
+    moi_quan_he TEXT,
+    ten_nguoi_quan_he TEXT,
+    PRIMARY KEY (cccd, moi_quan_he)
+);
+CREATE TABLE IF NOT EXISTS congdans_taisans (
+    ten_tai_san TEXT,
+    mo_ta TEXT,
+    cccd UUID,
+    ho_ten TEXT,
+    PRIMARY KEY ((ten_tai_san, mo_ta), cccd)
+);
+
+
+
+-- Thêm công dân vào bảng CONGDAN
+INSERT INTO congdans (cccd, ho_ten, quoc_tich, dia_chi_cu_tru, nam_sinh, gioi_tinh)
+VALUES (uuid(), 'Huỳnh Khương Ninh', 'Việt Nam', 'TP. HCM', 1985, 'Nam');
+
+INSERT INTO congdans (cccd, ho_ten, quoc_tich, dia_chi_cu_tru, nam_sinh, gioi_tinh)
+VALUES (uuid(), 'Huỳnh Kim Thanh Trà', 'Việt Nam', 'TP. HCM', 1990, 'Nữ');
+
+INSERT INTO congdans (cccd, ho_ten, quoc_tich, dia_chi_cu_tru, nam_sinh, gioi_tinh)
+VALUES (uuid(), 'Huỳnh Kim Bảo Ngọc', 'Việt Nam', 'TP. HCM', 1995, 'Nữ');
+
+INSERT INTO congdans (cccd, ho_ten, quoc_tich, dia_chi_cu_tru, nam_sinh, gioi_tinh)
+VALUES (uuid(), 'Huỳnh Kim Ngọc Hà', 'Việt Nam', 'TP. HCM', 1987, 'Nữ');
+
+-- Thêm địa phương vào bảng DIAPHUONG
+INSERT INTO diaphuongs (ma_dia_phuong, ten_dia_phuong, quan_huyen, tinh_thanh, danh_sach_cong_dan)
+VALUES (uuid(), 'Phường 1', 'Quận 1', 'TP. HCM', {f47c9d90-7657-11ec-90d6-0242ac120003, e7a01570-7657-11ec-90d6-0242ac120004});
+
+INSERT INTO diaphuongs (ma_dia_phuong, ten_dia_phuong, quan_huyen, tinh_thanh, danh_sach_cong_dan)
+VALUES (uuid(), 'Phường 2', 'Quận 3', 'TP. HCM', {e1a074c0-7657-11ec-90d6-0242ac120005, e7a1c9b0-7657-11ec-90d6-0242ac120006});
+
+
+
+-- Thêm hộ khẩu vào bảng HOKHAU
+INSERT INTO hokhaus (ma_ho_khau, dia_chi, ten_chu_ho, danh_sach_thanh_vien)
+VALUES (uuid(), 'Đường ABC, TP. HCM', 'Huỳnh Khương Ninh', {f47c9d90-7657-11ec-90d6-0242ac120003, e7a01570-7657-11ec-90d6-0242ac120004});
+
+INSERT INTO hokhaus (ma_ho_khau, dia_chi, ten_chu_ho, danh_sach_thanh_vien)
+VALUES (uuid(), 'Đường XYZ, TP. HCM', 'Huỳnh Kim Thanh Trà', {e1a074c0-7657-11ec-90d6-0242ac120005, e7a1c9b0-7657-11ec-90d6-0242ac120006});
+-- Thêm mối quan hệ vào bảng QUANHECONGDAN
+INSERT INTO quanhecongdans (cccd, nam_sinh, ten_nguoi_quan_he, moi_quan_he)
+VALUES (f47c9d90-7657-11ec-90d6-0242ac120003, 1985, 'Huỳnh Kim Thanh Trà', 'Chị');
+
+INSERT INTO quanhecongdans (cccd, nam_sinh, ten_nguoi_quan_he, moi_quan_he)
+VALUES (e7a01570-7657-11ec-90d6-0242ac120004, 1990, 'Huỳnh Kim Bảo Ngọc', 'Em');
+
+INSERT INTO quanhecongdans (cccd, nam_sinh, ten_nguoi_quan_he, moi_quan_he)
+VALUES (e1a074c0-7657-11ec-90d6-0242ac120005, 1995, 'Huỳnh Khương Ninh', 'Cha');
+-- Thêm tài sản và thông tin công dân vào bảng congdans_taisans
+INSERT INTO congdans_taisans (cccd, ho_ten, ten_tai_san, mo_ta)
+VALUES (f47c9d90-7657-11ec-90d6-0242ac120003, 'Huỳnh Khương Ninh', 'Xe ô tô CX-5', 'Biển số 51B-00797');
+
+
+
+
+
+-- Thêm tài sản vào bảng TAISAN
+INSERT INTO taisans (cccd, ma_tai_san, ten_tai_san, tri_gia, mo_ta)
+VALUES (f47c9d90-7657-11ec-90d6-0242ac120003, uuid(), 'Xe ô tô CX-5', 800000, 'Biển số 51B-00797');
+
+INSERT INTO taisans (cccd, ma_tai_san, ten_tai_san, tri_gia, mo_ta)
+VALUES (e7a01570-7657-11ec-90d6-0242ac120004, uuid(), 'Nhà phố', 2500000, 'Địa chỉ: Đường ABC, TP. HCM');
+
+
+-- Thêm địa phương vào bảng DIAPHUONG
+INSERT INTO diaphuongs_by_ma_dia_phuong (ma_dia_phuong, ten_dia_phuong, quan_huyen, tinh_thanh, danh_sach_cong_dan)
+VALUES (uuid(), 'Phường 1', 'Quận 1', 'TP. HCM', {f47c9d90-7657-11ec-90d6-0242ac120003, e7a01570-7657-11ec-90d6-0242ac120004});
+
+-- 1. Tìm những công dân có địa chỉ cư trú là “TP. HCM”.
+SELECT ho_ten, quoc_tich, cccd, dia_chi_cu_tru
+FROM congdans
+WHERE dia_chi_cu_tru = 'TP. HCM'
+ALLOW FILTERING;
+
+
+-- 2. Có bao nhiêu công dân có quốc tịch là “Việt Nam” đang cư trú tại “TP. HCM”.
+SELECT count(*) 
+FROM congdans
+WHERE quoc_tich = 'Việt Nam' AND dia_chi_cu_tru = 'TP. HCM'
+ALLOW FILTERING;
+
+-- 3. Địa phương nào có nhiều công dân nhất.
+SELECT ma_dia_phuong, COUNT(danh_sach_cong_dan) AS so_cong_dan
+FROM diaphuongs_by_ma_dia_phuong
+ALLOW FILTERING;
+
+
+-- 4. Thành phố Hồ Chí Minh có bao nhiêu hộ công dân.
+SELECT so_ho
+FROM diaphuongs_by_city
+WHERE tinh_thanh = 'TP. HCM';
+
+-- 5. Hộ khẩu có tên chủ hộ là “Huỳnh Khương Ninh” có bao nhiêu thành viên?
+SELECT count(danh_sach_thanh_vien) 
+FROM hokhaus
+WHERE ten_chu_ho = 'Huỳnh Khương Ninh'
+ALLOW FILTERING;
+
+
+-- 6. Hộ khẩu nào có chủ hộ tuổi lớn nhất, nhỏ nhất được quản lý.
+-- Truy vấn hộ khẩu với chủ hộ lớn tuổi nhất
+-- Truy vấn chủ hộ tuổi lớn nhất
+SELECT * 
+FROM hokhaus_by_chu_ho
+WHERE ten_chu_ho = 'Huỳnh Khương Ninh'
+ORDER BY nam_sinh DESC
+LIMIT 1;
+
+-- Truy vấn chủ hộ tuổi nhỏ nhất
+SELECT * 
+FROM hokhaus_by_chu_ho
+WHERE ten_chu_ho = 'Huỳnh Khương Ninh'
+ORDER BY nam_sinh ASC
+LIMIT 1;
+
+
+-- 7. Tìm tất cả các mối quan hệ của công dân có tên “Huỳnh Kim Thanh Trà”.
+SELECT moi_quan_he, ten_nguoi_quan_he
+FROM quanhecongdans
+WHERE cccd = f47c9d90-7657-11ec-90d6-0242ac120003;
+
+
+-- 8. Công dân “Huỳnh Kim Bảo Ngọc” có bao nhiêu anh chị em ruột.
+SELECT count(*) 
+FROM quanhecongdans
+WHERE cccd = e7a01570-7657-11ec-90d6-0242ac120004
+  AND moi_quan_he IN ('Anh', 'Chị');
+
+-- 9. Trích xuất thông tin tất cả tài sản của công dân “Huỳnh Kim Ngọc Hà” và tổng trị giá tài sản là bao nhiêu.
+-- Lấy thông tin tài sản
+SELECT cccd
+FROM congdans
+WHERE ho_ten = 'Huỳnh Kim Ngọc Hà' 
+ALLOW FILTERING;
+
+
+
+SELECT sum(tri_gia)
+FROM taisans
+WHERE cccd = e1a074c0-7657-11ec-90d6-0242ac120005
+ALLOW FILTERING;
+
+
+
+-- 10. Tài sản “Xe ô tô CX-5” biển số 51B-00797 của công dân nào?
+SELECT ho_ten
+FROM congdans_taisans
+WHERE ten_tai_san = 'Xe ô tô CX-5' AND mo_ta = 'Biển số 51B-00797';
+
+
+
+
+bài 3.3
+
+
+
+-- Bảng khohang
+CREATE TABLE khohang (
+    id_kho UUID PRIMARY KEY,               -- Kho hàng có ID duy nhất
+    ten_kho TEXT,                           -- Tên kho
+    dia_chi TEXT,                           -- Địa chỉ kho
+    loai_hang TEXT,                         -- Loại hàng (ví dụ: khô, nước)
+    suc_chua INT,                           -- Sức chứa kho (tấn)
+    so_luong_ton INT,                       -- Số lượng tồn
+    ngay_nhap DATE                          -- Ngày nhập hàng
+);
+
+-- Bảng mathang
+CREATE TABLE mathang (
+    ma_hang UUID PRIMARY KEY,               -- Mã mặt hàng
+    ten_hang TEXT,                          -- Tên mặt hàng
+    quy_cach TEXT,                         -- Quy cách (ví dụ: hộp, chai)
+    ngay_san_xuat DATE,                     -- Ngày sản xuất
+    lo_hang TEXT,                           -- Lô hàng
+    loai_hang TEXT                          -- Loại hàng (khô, nước)
+);
+
+-- Bảng phieunhap
+CREATE TABLE phieunhap (
+    ma_phieu UUID PRIMARY KEY,              -- Mã phiếu nhập
+    ma_hang UUID,                           -- Mã hàng
+    ten_hang TEXT,                          -- Tên hàng
+    so_luong INT,                           -- Số lượng nhập
+    gia_nhap DECIMAL,                       -- Giá nhập
+    ngay_het_han DATE,                      -- Ngày hết hạn
+    noi_san_xuat TEXT,                     -- Nơi sản xuất
+    nhan_vien TEXT,                         -- Nhân viên nhập
+    ngay_nhap DATE                          -- Ngày nhập
+);
+
+-- Bảng phieuxuat
+CREATE TABLE phieuxuat (
+    ma_phieu UUID PRIMARY KEY,              -- Mã phiếu xuất
+    ma_hang UUID,                           -- Mã hàng
+    so_luong INT,                           -- Số lượng xuất
+    ngay_xuat DATE,                         -- Ngày xuất
+    khach_hang TEXT,                        -- Khách hàng
+    tri_gia DECIMAL                         -- Trị giá
+);
+
+-- Bảng khachhang
+CREATE TABLE khachhang (
+    id_khach UUID PRIMARY KEY,              -- ID khách hàng
+    ho_ten TEXT,                            -- Họ tên khách hàng
+    dia_chi TEXT,                           -- Địa chỉ khách hàng
+    dien_thoai TEXT,                        -- Điện thoại
+    loai_khach TEXT,                        -- Loại khách (VIP, thường)
+    lich_su_mua TEXT                        -- Lịch sử mua hàng dưới dạng chuỗi
+);
+
+-- Bảng lichsumua (Lịch sử mua hàng - nếu bạn chọn cách tách bảng)
+CREATE TABLE lichsumua (
+    id_khach UUID,
+    lich_su_mua TEXT,                       -- Lịch sử mua hàng
+    PRIMARY KEY (id_khach)
+);
+
+-- Bảng congdan
+CREATE TABLE congdan (
+    dia_chi TEXT,                            -- Địa chỉ cư trú
+    id_citizen UUID,                         -- ID công dân
+    ho_ten TEXT,                             -- Họ tên
+    quoc_tich TEXT,                          -- Quốc tịch
+    so_cccd TEXT,                            -- Số CCCD
+    PRIMARY KEY (dia_chi, id_citizen)       -- Phân vùng theo địa chỉ cư trú và phân loại theo ID công dân
+);
+CREATE TABLE khohang_by_location (
+    ten_kho TEXT,
+    dia_chi TEXT,
+    suc_chua INT,
+    PRIMARY KEY (ten_kho, dia_chi)
+);
+
+
+
+
+INSERT INTO khohang (id_kho, ten_kho, dia_chi, loai_hang, suc_chua, so_luong_ton, ngay_nhap)
+VALUES (uuid(), 'Kho A', '123 Đường ABC, TP.HCM', 'Khô', 1000, 500, '2024-12-01');
+
+INSERT INTO khohang (id_kho, ten_kho, dia_chi, loai_hang, suc_chua, so_luong_ton, ngay_nhap)
+VALUES (uuid(), 'Kho B', '456 Đường XYZ, Hà Nội', 'Nước', 2000, 1500, '2024-12-02');
+
+
+INSERT INTO mathang (ma_hang, ten_hang, quy_cach, ngay_san_xuat, lo_hang, loai_hang)
+VALUES (uuid(), 'Gạo ST25', 'Bao 5kg', '2024-10-01', 'LH123', 'Khô');
+
+INSERT INTO mathang (ma_hang, ten_hang, quy_cach, ngay_san_xuat, lo_hang, loai_hang)
+VALUES (uuid(), 'Nước khoáng Lavie', 'Chai 500ml', '2024-11-01', 'LH124', 'Nước');
+
+
+INSERT INTO phieunhap (ma_phieu, ma_hang, ten_hang, so_luong, gia_nhap, ngay_het_han, noi_san_xuat, nhan_vien, ngay_nhap)
+VALUES (uuid(), uuid(), 'Gạo ST25', 1000, 20000.50, '2025-10-01', 'Vĩnh Long', 'Nguyễn Văn A', '2024-12-03');
+
+INSERT INTO phieunhap (ma_phieu, ma_hang, ten_hang, so_luong, gia_nhap, ngay_het_han, noi_san_xuat, nhan_vien, ngay_nhap)
+VALUES (uuid(), uuid(), 'Nước khoáng Lavie', 2000, 5000.75, '2025-12-01', 'Lavie', 'Trần Thị B', '2024-12-04');
+
+
+
+INSERT INTO phieuxuat (ma_phieu, ma_hang, so_luong, ngay_xuat, khach_hang, tri_gia)
+VALUES (uuid(), uuid(), 500, '2024-12-05', 'Công ty XYZ', 25000.50);
+
+INSERT INTO phieuxuat (ma_phieu, ma_hang, so_luong, ngay_xuat, khach_hang, tri_gia)
+VALUES (uuid(), uuid(), 1000, '2024-12-06', 'Công ty ABC', 50000.75);
+
+
+INSERT INTO khachhang (id_khach, ho_ten, dia_chi, dien_thoai, loai_khach, lich_su_mua)
+VALUES (uuid(), 'Nguyễn Văn C', '789 Đường PQR, TP.HCM', '0901234567', 'VIP', 'Gạo ST25, Nước khoáng Lavie');
+
+INSERT INTO khachhang (id_khach, ho_ten, dia_chi, dien_thoai, loai_khach, lich_su_mua)
+VALUES (uuid(), 'Trần Thị D', '321 Đường MNO, Hà Nội', '0912345678', 'Thường', 'Nước khoáng Lavie');
+
+
+INSERT INTO lichsumua (id_khach, lich_su_mua)
+VALUES (uuid(), 'Gạo ST25, Nước khoáng Lavie');
+
+INSERT INTO lichsumua (id_khach, lich_su_mua)
+VALUES (uuid(), 'Nước khoáng Lavie');
+
+
+INSERT INTO congdan (dia_chi, id_citizen, ho_ten, quoc_tich, so_cccd)
+VALUES ('123 Đường ABC, TP.HCM', uuid(), 'Nguyễn Văn A', 'Việt Nam', '123456789012');
+
+INSERT INTO congdan (dia_chi, id_citizen, ho_ten, quoc_tich, so_cccd)
+VALUES ('456 Đường XYZ, Hà Nội', uuid(), 'Trần Thị B', 'Việt Nam', '987654321098');
+
+
+
+CREATE INDEX ON khohang (dia_chi);
+
+SELECT id_kho, ten_kho, suc_chua 
+FROM khohang
+WHERE dia_chi = 'Vũng Tàu';
+
+
+-- 2. Kho hàng “Thép Việt Tiệp” tại TP. HCM có sức chứa bao nhiêu tấn.
+-- Tạo chỉ mục trên cột ten_kho
+SELECT suc_chua
+FROM khohang_by_location
+WHERE ten_kho = 'Thép Việt Tiệp' AND dia_chi = 'TP.HCM';
+-- 3. Truy xuất lịch sử nhập hàng của kho “Cá hồi Nauy” trong quý 1 năm 2024.
+-- (Lưu ý: Bạn cần có chỉ mục hoặc trường ngày nhập là phần của khóa chính hoặc chỉ mục)
+SELECT * 
+FROM phieunhap
+WHERE ten_kho = 'Cá hồi Nauy' AND ngay_nhap >= '2024-01-01' AND ngay_nhap <= '2024-03-31';
+
+-- 4. Mặt hàng “Sữa Vinamilk không đường” có lô hàng “SV01KD” ngày sản xuất là ngày nào.
+SELECT ngay_san_xuat
+FROM mathang
+WHERE ten_hang = 'Sữa Vinamilk không đường' AND lo_hang = 'SV01KD';
+
+-- 5. Có bao nhiêu mặt hàng có quy cách là hộp và thuộc loại hàng nước.
+SELECT COUNT(*) 
+FROM mathang 
+WHERE quy_cach = 'Hộp' AND loai_hang = 'Nước';
+
+-- 6. Thông tin nhập hàng của phiếu nhập “PN010” tháng 9/2024.
+SELECT * 
+FROM phieunhap
+WHERE ma_phieu = 'PN010' AND ngay_nhap >= '2024-09-01' AND ngay_nhap <= '2024-09-30';
+
+-- 7. Cho biết phiếu nhập “PN011” do nhân viên nào nhập, số lượng hàng nhập bao nhiêu.
+SELECT nhan_vien, so_luong
+FROM phieunhap
+WHERE ma_phieu = 'PN011';
+
+-- 8. Phiếu xuất cho khách hàng “Huỳnh Kim Anh” trị giá bao nhiêu.
+SELECT tri_gia
+FROM phieuxuat
+WHERE khach_hang = 'Huỳnh Kim Anh';
+
+-- 9. Phiếu xuất nào có trị giá lớn nhất, nhỏ nhất trong quý 3/2024.
+SELECT ma_phieu, tri_gia 
+FROM phieuxuat 
+WHERE ngay_xuat >= '2024-07-01' AND ngay_xuat <= '2024-09-30';
+
+-- 10. Xem thông tin khách hàng và lịch sử mua hàng của khách hàng “Lê Anh Kiều” trong quý 2 năm 2024.
+SELECT ho_ten, dia_chi, dien_thoai, loai_khach, lich_su_mua
+FROM khachhang
+WHERE ho_ten = 'Lê Anh Kiều' AND lich_su_mua >= '2024-04-01' AND lich_su_mua <= '2024-06-30';
