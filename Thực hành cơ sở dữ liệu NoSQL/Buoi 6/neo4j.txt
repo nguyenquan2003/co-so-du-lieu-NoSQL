@@ -1,0 +1,70 @@
+1. Tạo Graph Database theo mẫu gồm: Các nút, các mối quan hệ bao gồm các thuộc tính 
+// Tạo các nút
+CREATE (dinh:Teacher {name: 'Định', age: 40, address: 'TP.HCM'})
+CREATE (tien:Student {name: 'Tiến', age: 19, address: 'TP.HCM', gender: 'Female'})
+CREATE (nam:Student {name: 'Nam', age: 23, job: 'std', address: 'Tây Ninh', gender: 'Male'})
+CREATE (le:Teacher {name: 'Lễ', age: 43, address: 'Bình Thuận', gender: 'Male'})
+CREATE (hqt:Subject {name: 'HQT', numMess: 3})
+CREATE (nosql:Subject {name: 'NoSQL', numMess: 2})
+
+// Tạo các mối quan hệ
+MATCH (nam:Student {name: "Nam"}), (dinh:Teacher {name: "Định"})
+CREATE (nam)-[:Learned {in: 2021}]->(dinh);
+
+MATCH (tien:Student {name: "Tiến"}), (dinh:Teacher {name: "Định"})
+CREATE (tien)-[:IS_Student_Of]->(dinh);
+
+MATCH (nam:Student {name: "Nam"}), (tien:Student {name: "Tiến"})
+CREATE (nam)-[:IS_Friend_Of]->(tien);
+
+MATCH (tien:Student {name: "Tiến"}), (hqt:Subject {name: "HQT"})
+CREATE (tien)-[:IS_Learning]->(hqt);
+
+MATCH (nam:Student {name: "Nam"}), (le:Teacher {name: "Lễ"})
+CREATE (nam)-[:IS_Student_Of]->(le);
+
+MATCH (nam:Student {name: "Nam"}), (nosql:Subject {name: "NoSQL"})
+CREATE (nam)-[:IS_Learning]->(nosql);
+
+MATCH (le:Teacher {name: "Lễ"}), (nosql:Subject {name: "NoSQL"})
+CREATE (le)-[:Teaching {since: 2020}]->(nosql);
+
+MATCH (le:Teacher {name: "Lễ"}), (hqt:Subject {name: "HQT"})
+CREATE (le)-[:Teaching {since: 2010}]->(hqt);
+
+MATCH (le:Teacher {name: "Lễ"}), (dinh:Teacher {name: "Định"})
+CREATE (le)-[:Colleague {since: 2008}]->(dinh);
+
+MATCH (dinh:Teacher {name: "Định"}), (nosql:Subject {name: "NoSQL"})
+CREATE (dinh)-[:Teaching {since: 2019}]->(nosql);
+
+2. Cho biết danh sách giảng viên dạy môn HQT và thời gian tương ứng. 
+MATCH (t:Teacher)-[r:Teaching]->(sub:Subject {name: 'HQT'})
+RETURN t.name AS TeacherName, r.since AS TeachingSince;
+
+
+3. Cho biết số lượng sinh viên theo học môn NoSQL và HQT. 
+MATCH (s:Student)-[:IS_Learning]->(sub:Subject)
+WHERE sub.name IN ['NoSQL', 'HQT']
+RETURN sub.name AS SubjectName, COUNT(s) AS StudentCount;
+
+
+4. Môn NoSQL có bao nhiêu tín chỉ, sinh viên nào theo học môn này. 
+MATCH (s:Student)-[:IS_Learning]->(sub:Subject {name: 'NoSQL'})
+RETURN sub.name AS SubjectName, sub.numMess AS Credits, COLLECT(s.name) AS Students;
+
+5. Cho biết môn NoSQL do giáo viên nào giảng dạy, thời gian giảng dạy từ khi nào.
+MATCH (t:Teacher)-[r:Teaching]->(sub:Subject {name: 'NoSQL'})
+RETURN t.name AS TeacherName, r.since AS TeachingSince;
+
+6. Cho biết mối quan hệ giữa Định và Tiến.  
+MATCH (tien:Student {name: 'Tiến'})-[r]->(dinh:Teacher {name: 'Định'})
+RETURN TYPE(r) AS RelationshipType;
+
+
+7. Tìm người có tuổi lớn nhất được lưu trữ trong hệ thống.
+MATCH (p)
+WHERE p.age IS NOT NULL
+RETURN p.name AS Name, p.age AS Age
+ORDER BY p.age DESC
+LIMIT 1;

@@ -1,0 +1,57 @@
+-- Tạo keyspace trong Cassandra
+CREATE KEYSPACE LibraryManagement WITH replication = {
+  'class': 'SimpleStrategy',
+  'replication_factor': 3
+};
+
+USE LibraryManagement;
+
+-- Bảng books
+CREATE TABLE books (
+    book_id UUID PRIMARY KEY,
+    title TEXT,
+    major TEXT,
+    author TEXT
+);
+
+-- Bảng readers
+CREATE TABLE readers (
+    reader_id UUID PRIMARY KEY,
+    name TEXT,
+    gender TEXT,
+    address TEXT
+);
+
+-- Bảng borrow_history
+CREATE TABLE borrow_history (
+    borrow_id UUID PRIMARY KEY,
+    reader_id UUID,
+    book_id UUID,
+    borrow_date DATE
+);
+
+-- Thêm dữ liệu vào bảng books
+INSERT INTO books (book_id, title, major, author) VALUES (uuid(), 'Data Structures', 'CNTT', 'Nguyen Van A');
+INSERT INTO books (book_id, title, major, author) VALUES (uuid(), 'Database Systems', 'CNTT', 'Tran Van B');
+INSERT INTO books (book_id, title, major, author) VALUES (uuid(), 'Artificial Intelligence', 'CNTT', 'Le Thi C');
+
+-- Thêm dữ liệu vào bảng readers
+INSERT INTO readers (reader_id, name, gender, address) VALUES (uuid(), 'Huynh Van Vu', 'Nam', 'HCM');
+INSERT INTO readers (reader_id, name, gender, address) VALUES (uuid(), 'Nguyen Thi Lan', 'Nu', 'Hanoi');
+INSERT INTO readers (reader_id, name, gender, address) VALUES (uuid(), 'Tran Van Nam', 'Nam', 'HCM');
+
+-- Câu 1
+SELECT COUNT(*) AS TotalBooks
+FROM books
+WHERE major = 'CNTT' ALLOW FILTERING;
+
+-- Câu 2
+SELECT *
+FROM readers
+WHERE name = 'Huynh Van Vu' ALLOW FILTERING;
+
+-- Câu 3
+SELECT gender, COUNT(reader_id) AS reader_count
+FROM borrow_history
+WHERE borrow_date >= '2024-01-01' AND borrow_date <= '2024-12-31'
+ALLOW FILTERING;
